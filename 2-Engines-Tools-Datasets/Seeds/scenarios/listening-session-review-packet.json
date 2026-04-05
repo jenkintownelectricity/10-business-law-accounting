@@ -1,186 +1,114 @@
 {
   "scenario_id": "seed-listening-session-review-001",
-  "scenario_name": "Complete Listening Session Review Packet",
-  "description": "Complete review packet from a listening session capturing a project status meeting. Contains extracted items ready for practitioner review including obligation candidates, deadline candidates, and routing hints.",
+  "scenario_name": "Listening Session Review Packet — BuildRight Contract Negotiation",
+  "description": "An Iron Ear listening session captures a contract negotiation call. The session is packaged into a review packet with extracted observations, action items, and kernel routing hints. All outputs are UNTRUSTED until typed by sovereign kernels.",
+  "source_layer": "Voice-Assist-Layer",
+  "sovereignty": "NON_SOVEREIGN",
+  "trust_status": "UNTRUSTED_UNTIL_TYPED",
   "listening_session": {
-    "id": "listen-session-review-001",
-    "session_id": "listen-session-review-001",
-    "title": "Riverside Commercial Development — Weekly Status Meeting",
-    "description": "Weekly project status meeting for the Riverside Commercial Development. Attendees from construction, legal, and finance.",
-    "start_time": "2026-04-04T09:00:00Z",
-    "end_time": "2026-04-04T09:52:00Z",
-    "status": "completed",
-    "participant_count": 5,
-    "matter_id": "matter-riverside-project-001",
-    "trust_level": "UNTRUSTED"
+    "session_id": "iron-ear-sess-001",
+    "practitioner_id": "pract-smitchell-001",
+    "started_at": "2026-04-04T10:00:00Z",
+    "ended_at": "2026-04-04T10:48:22Z",
+    "mode": "listening",
+    "audio_quality": "phone_call",
+    "language": "en-US",
+    "participants": [
+      { "speaker_id": "spk-int-001", "name": "Sarah Mitchell", "affiliation": "internal", "role": "lead_counsel" },
+      { "speaker_id": "spk-ext-001", "name": "Tom Graves", "affiliation": "external", "role": "counterparty_counsel" }
+    ],
+    "total_segments": 47,
+    "total_words": 3842
   },
-  "transcript_segments": [
-    {
-      "speaker": "Tom (Project Manager)",
-      "text": "The concrete pour for Building B is scheduled for next Wednesday. We need the structural engineer sign-off by Monday end of day or we slip the schedule.",
-      "timestamp": "00:03:22"
-    },
-    {
-      "speaker": "Lisa (Finance)",
-      "text": "BuildRight's March invoice came in at $21,550. That's within budget but we only have $187K remaining on that consulting contract. At this rate, we'll exhaust the budget by August.",
-      "timestamp": "00:08:15"
-    },
-    {
-      "speaker": "Tom (Project Manager)",
-      "text": "We need to renegotiate that contract or get a budget increase before the current allocation runs out. Can we get that on the agenda for next month's board meeting?",
-      "timestamp": "00:09:30"
-    },
-    {
-      "speaker": "Rachel (Legal)",
-      "text": "On the permitting front, the environmental impact assessment is due to the county by April 30th. If we miss that, the conditional use permit expires and we'd need to reapply. That would cost us three months minimum.",
-      "timestamp": "00:15:45"
-    },
-    {
-      "speaker": "Lisa (Finance)",
-      "text": "The Hartfield subcontractor is disputing our retention holdback. They say the punch list items don't affect substantial completion. We need legal to review the retention clause.",
-      "timestamp": "00:22:10"
-    },
-    {
-      "speaker": "Rachel (Legal)",
-      "text": "I'll review the retention clause this week. We should also check if our insurance covers the delay claims that Hartfield is threatening.",
-      "timestamp": "00:23:30"
-    },
-    {
-      "speaker": "Mark (Construction Superintendent)",
-      "text": "The city inspector is coming next Thursday for the electrical rough-in inspection on Building A. We must have all junction boxes accessible and the permit posted on site.",
-      "timestamp": "00:31:00"
-    },
-    {
-      "speaker": "Tom (Project Manager)",
-      "text": "Everyone needs to submit their updated cost projections by end of this week so Lisa can run the numbers for the quarterly report. The board presentation is April 20th.",
-      "timestamp": "00:42:15"
-    }
-  ],
   "review_packet": {
-    "obligation_candidates": [
+    "packet_id": "review-pkt-iron-ear-001",
+    "trust_status": "UNTRUSTED",
+    "requires_kernel_typing": true,
+    "generated_at": "2026-04-04T10:49:00Z",
+    "summary": "Negotiation call regarding amendment to BuildRight consulting contract. Key topics: rate increase request, indemnification cap, and insurance requirements. Counterparty counsel pushed for 8% rate increase; internal counsel countered with 4% tied to CPI.",
+    "key_topics": [
       {
-        "id": "obl-cand-001",
-        "extracted_text": "Need structural engineer sign-off by Monday end of day for Building B concrete pour",
-        "suggested_type": "performance",
-        "suggested_due_date": "2026-04-06T17:00:00Z",
-        "confidence": 0.88,
-        "routing_hint": "business",
-        "review_status": "pending",
-        "criticality": "high"
+        "topic": "Rate increase negotiation",
+        "relevant_segments": [3, 4, 5, 12, 13, 14],
+        "domain": "accounting",
+        "summary": "BuildRight requesting 8% rate increase from $165/hr to $178/hr. Internal position is 4% CPI-linked increase to $172/hr. Gap of $6/hr across estimated 2000 hours annually = $12,000 annual impact."
       },
       {
-        "id": "obl-cand-002",
-        "extracted_text": "Environmental impact assessment due to the county by April 30th — conditional use permit at risk",
-        "suggested_type": "regulatory_filing",
-        "suggested_due_date": "2026-04-30",
-        "confidence": 0.95,
-        "routing_hint": "law",
-        "review_status": "pending",
-        "criticality": "critical"
+        "topic": "Indemnification cap revision",
+        "relevant_segments": [18, 19, 20, 21],
+        "domain": "law",
+        "summary": "Counterparty wants to reduce indemnification cap from 24 months to 12 months of fees. Internal position is to maintain 24 months given data processing risk profile."
       },
       {
-        "id": "obl-cand-003",
-        "extracted_text": "Legal to review retention clause regarding Hartfield subcontractor dispute",
-        "suggested_type": "compliance",
-        "suggested_due_date": "2026-04-11",
-        "confidence": 0.82,
-        "routing_hint": "law",
-        "review_status": "pending",
-        "criticality": "high"
-      },
-      {
-        "id": "obl-cand-004",
-        "extracted_text": "All junction boxes accessible and permit posted for electrical inspection next Thursday",
-        "suggested_type": "compliance",
-        "suggested_due_date": "2026-04-09",
-        "confidence": 0.90,
-        "routing_hint": "business",
-        "review_status": "pending",
-        "criticality": "high"
-      },
-      {
-        "id": "obl-cand-005",
-        "extracted_text": "Submit updated cost projections by end of week for quarterly report",
-        "suggested_type": "reporting",
-        "suggested_due_date": "2026-04-10",
-        "confidence": 0.85,
-        "routing_hint": "accounting",
-        "review_status": "pending",
-        "criticality": "medium"
+        "topic": "Professional liability insurance requirement",
+        "relevant_segments": [30, 31, 32],
+        "domain": "law",
+        "summary": "Discussion of increasing minimum professional liability insurance from $2M to $5M. Counterparty indicated this would increase their overhead, may request fee offset."
       }
     ],
-    "deadline_candidates": [
+    "extracted_action_items": [
       {
-        "id": "dl-cand-001",
-        "extracted_text": "Structural engineer sign-off — Monday EOD",
-        "suggested_date": "2026-04-06",
-        "criticality": "operational",
-        "consequence": "Concrete pour for Building B slips schedule",
-        "confidence": 0.88,
-        "review_status": "pending"
+        "action": "Model financial impact of 4% vs 8% rate increase across projected hours for next 3 years",
+        "assignee_inferred": "pract-rfernandez-001",
+        "target_kernel": "accounting",
+        "priority": "high",
+        "confidence": 0.88
       },
       {
-        "id": "dl-cand-002",
-        "extracted_text": "Environmental impact assessment — April 30",
-        "suggested_date": "2026-04-30",
-        "criticality": "statutory",
-        "consequence": "Conditional use permit expires; 3-month reapplication process",
-        "confidence": 0.95,
-        "review_status": "pending"
+        "action": "Draft revised indemnification clause maintaining 24-month cap with narrowed scope as compromise",
+        "assignee_inferred": "pract-smitchell-001",
+        "target_kernel": "law",
+        "priority": "high",
+        "confidence": 0.92
       },
       {
-        "id": "dl-cand-003",
-        "extracted_text": "Electrical rough-in inspection — next Thursday",
-        "suggested_date": "2026-04-09",
-        "criticality": "operational",
-        "consequence": "Schedule delay if inspection not passed",
-        "confidence": 0.90,
-        "review_status": "pending"
+        "action": "Research market standard for professional liability insurance in construction consulting",
+        "assignee_inferred": "pract-smitchell-001",
+        "target_kernel": "law",
+        "priority": "medium",
+        "confidence": 0.85
       },
       {
-        "id": "dl-cand-004",
-        "extracted_text": "Cost projections due — end of this week",
-        "suggested_date": "2026-04-10",
-        "criticality": "operational",
-        "consequence": "Quarterly report and board presentation delayed",
-        "confidence": 0.85,
-        "review_status": "pending"
-      },
-      {
-        "id": "dl-cand-005",
-        "extracted_text": "Board presentation — April 20",
-        "suggested_date": "2026-04-20",
-        "criticality": "operational",
-        "consequence": "Board requires updated financial projections",
-        "confidence": 0.92,
-        "review_status": "pending"
+        "action": "Schedule follow-up call with BuildRight counsel for next week",
+        "assignee_inferred": "pract-jchen-001",
+        "target_kernel": "commercial",
+        "priority": "medium",
+        "confidence": 0.94
       }
     ],
-    "routing_hints": {
-      "law": {
-        "relevance": 0.80,
-        "items": ["Environmental impact assessment filing", "Retention clause dispute review", "Insurance coverage for delay claims"],
-        "key_terms": ["conditional use permit", "retention clause", "substantial completion", "insurance coverage"]
+    "detected_commitments": [
+      {
+        "speaker": "spk-int-001",
+        "commitment": "Will send revised indemnification language by end of week",
+        "segment": 21,
+        "deadline_inferred": "2026-04-10",
+        "confidence": 0.87
       },
-      "accounting": {
-        "relevance": 0.70,
-        "items": ["Budget tracking for BuildRight contract", "Cost projection compilation", "Quarterly financial report preparation", "Retention holdback accounting treatment"],
-        "key_terms": ["budget remaining", "cost projections", "quarterly report", "retention holdback"]
-      },
-      "business": {
-        "relevance": 0.75,
-        "items": ["Project schedule management", "Contract renegotiation or budget increase", "Inspection readiness", "Board presentation preparation"],
-        "key_terms": ["schedule slip", "budget increase", "board meeting", "inspection"]
+      {
+        "speaker": "spk-ext-001",
+        "commitment": "Will provide updated insurance certificate if $5M requirement is agreed",
+        "segment": 32,
+        "deadline_inferred": null,
+        "confidence": 0.80
       }
-    },
-    "advisory_summary": {
-      "total_obligation_candidates": 5,
-      "total_deadline_candidates": 5,
-      "highest_criticality": "critical",
-      "critical_items": ["Environmental impact assessment due April 30 — permit at risk"],
-      "cross_domain_items": 3,
-      "review_required": true,
-      "all_items_advisory_only": true
-    }
-  }
+    ],
+    "risk_flags": [
+      {
+        "flag": "Counterparty may bundle rate increase with indemnification cap reduction as package deal",
+        "severity": "medium",
+        "segments": [25, 26],
+        "confidence": 0.72
+      }
+    ]
+  },
+  "expected_kernel_routing": {
+    "kernels_involved": ["law", "accounting", "commercial"],
+    "reason": "Negotiation covers contract terms (law), financial impact modeling (accounting), and scheduling/matter management (commercial)"
+  },
+  "validation_requirements": [
+    "All extracted action items must be reviewed and confirmed by practitioner before kernel typing",
+    "Detected commitments must be verified against actual session audio before creating obligations",
+    "Financial figures must be validated by accounting kernel before use in any analysis",
+    "Risk flags are advisory only and must not be treated as assessed risks until kernel-typed"
+  ]
 }
