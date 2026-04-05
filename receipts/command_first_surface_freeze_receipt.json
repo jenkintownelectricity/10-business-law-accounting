@@ -1,0 +1,50 @@
+{
+  "receipt_type": "PATTERN_FREEZE",
+  "receipt_id": "freeze-cfos-v1-20260405",
+  "pattern_id": "command-first-operating-surface-v1",
+  "pattern_name": "Command-First Operating Surface",
+  "version": "v1",
+  "status": "FROZEN",
+
+  "artifacts_created": {
+    "doctrine": "0-Frozen-Doctrine/COMMAND-FIRST-OPERATING-SURFACE-v1.md",
+    "change_control": "0-Frozen-Doctrine/CHANGE-CONTROL-COMMAND-FIRST-OPERATING-SURFACE-v1.md",
+    "registry_entry": "00-validkernel-registry/capabilities/patterns/command-first-operating-surface-v1.json"
+  },
+
+  "legacy_cleanup": {
+    "removed": [
+      "src/lib/command/commandRegistry.ts",
+      "src/lib/command/commandExecutor.ts"
+    ],
+    "reason": "Zero external imports confirmed. Canonical registry (registry.ts) is the sole execution path.",
+    "verification": "grep -rn 'commandRegistry\\|commandExecutor' src/ — zero results excluding self-references"
+  },
+
+  "sovereignty_verification": {
+    "canonical_ingress": "CONFIRMED — all execution routes through registry.ts",
+    "no_split_brain": "CONFIRMED — legacy files removed, zero import references",
+    "replay_mutation_blocked": "CONFIRMED — blocked at registry guard AND handler level",
+    "ghost_non_solidity": "CONFIRMED — ghost.promote is only solidification route",
+    "doctrine_read_only": "CONFIRMED — zero write paths in doctrine surfaces",
+    "focus_sovereignty": "CONFIRMED — AI cannot seize PRIMARY_ACTIVE",
+    "vkbus_observability": "CONFIRMED — 12 signal types, ghost.promote actively wired"
+  },
+
+  "command_inventory": {
+    "total_commands": 26,
+    "focus_commands": 8,
+    "ghost_commands": 5,
+    "navigation_commands": 8,
+    "system_commands": 5
+  },
+
+  "test_coverage": {
+    "test_suites": 13,
+    "total_assertions": 129,
+    "status": "ALL PASSING"
+  },
+
+  "authority": "L0_ARMAND_LEFEBVRE",
+  "timestamp": "2026-04-05T00:00:00Z"
+}
