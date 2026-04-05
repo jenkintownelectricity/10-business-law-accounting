@@ -1,0 +1,28 @@
+{
+  "scenario_id": "seed-spoken-contract-note-001",
+  "title": "Dictated Contract Review Note",
+  "description": "A spoken note dictated by an attorney reviewing the TechVendor license agreement. Captured via voice session and routed for review.",
+  "domains": ["voice", "law"],
+  "priority": "medium",
+  "voice_session": {
+    "session_id": "vs-attorney-001-1712300000",
+    "user_id": "attorney-001",
+    "mode": "dictation",
+    "status": "stopped"
+  },
+  "spoken_note": {
+    "envelope_id": "note-spoken-contract-001",
+    "session_id": "vs-attorney-001-1712300000",
+    "raw_text": "Note for the TechVendor license review. The limitation of liability clause needs attention. It's capped at twelve months of fees which is standard but we should push for twenty-four months given the data processing risks. Also the auto-renewal clause needs a longer notice period. Sixty days is too short for our procurement cycle. Recommend ninety days minimum. Finally check if the GDPR DPA covers all our EU subsidiaries not just the parent entity.",
+    "normalized_text": "Note for the TechVendor license review. The limitation of liability clause needs attention. It is capped at 12 months of fees which is standard but we should push for 24 months given the data processing risks. Also the auto-renewal clause needs a longer notice period. 60 days is too short for our procurement cycle. Recommend 90 days minimum. Finally check if the GDPR DPA covers all our EU subsidiaries not just the parent entity.",
+    "detected_entities": ["TechVendor", "EU subsidiaries"],
+    "detected_dates": [],
+    "detected_amounts": ["12 months", "24 months", "60 days", "90 days"],
+    "source": "dictation"
+  },
+  "expected_routing": {
+    "primary": "law",
+    "advisory_source": "voice",
+    "routed_to": "review_queue"
+  }
+}

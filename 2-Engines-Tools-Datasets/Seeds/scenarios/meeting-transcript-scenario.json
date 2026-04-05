@@ -1,0 +1,52 @@
+{
+  "scenario_id": "seed-meeting-transcript-001",
+  "title": "Meeting with Obligation Candidates",
+  "description": "Iron Ear captured meeting transcript with detected obligation candidates and action items from a contract negotiation meeting.",
+  "domains": ["voice", "law", "business"],
+  "priority": "high",
+  "voice_session": {
+    "session_id": "vs-meeting-001-1712400000",
+    "user_id": "attorney-001",
+    "mode": "meeting",
+    "status": "stopped"
+  },
+  "meeting_intake": {
+    "packet_id": "meeting-iron-ear-vs-meeting-001",
+    "session_id": "vs-meeting-001-1712400000",
+    "title": "TechVendor Contract Negotiation — Round 2",
+    "attendees": ["J. Smith (Acme, Legal)", "K. Chen (Acme, Procurement)", "M. Davis (TechVendor, Sales)", "R. Patel (TechVendor, Legal)"],
+    "transcript": {
+      "envelope_id": "transcript-meeting-001",
+      "session_id": "vs-meeting-001-1712400000",
+      "segments": [
+        { "segment_id": "seg-001", "speaker": "M. Davis", "text": "We agree to extend the liability cap to eighteen months of fees.", "confidence": 0.92, "timestamp": "2026-04-03T14:05:00Z", "duration_ms": 4200 },
+        { "segment_id": "seg-002", "speaker": "J. Smith", "text": "That works. We also need the notice period for auto-renewal extended to ninety days.", "confidence": 0.95, "timestamp": "2026-04-03T14:05:10Z", "duration_ms": 5100 },
+        { "segment_id": "seg-003", "speaker": "R. Patel", "text": "TechVendor agrees to the ninety day notice period. We will deliver the revised contract by next Friday.", "confidence": 0.91, "timestamp": "2026-04-03T14:05:20Z", "duration_ms": 6300 },
+        { "segment_id": "seg-004", "speaker": "K. Chen", "text": "Action item for me: I need to get the updated budget approved for the new GPU cluster line item before we can sign.", "confidence": 0.88, "timestamp": "2026-04-03T14:06:00Z", "duration_ms": 7200 },
+        { "segment_id": "seg-005", "speaker": "J. Smith", "text": "Agreed. And I must review the GDPR DPA addendum to ensure it covers all EU subsidiaries. Deadline is end of next week.", "confidence": 0.93, "timestamp": "2026-04-03T14:06:15Z", "duration_ms": 6800 }
+      ],
+      "total_duration_ms": 29600,
+      "speaker_count": 4,
+      "language": "en",
+      "generated_at": "2026-04-03T14:10:00Z"
+    },
+    "obligation_candidates": [
+      "TechVendor agrees to extend the liability cap to eighteen months of fees",
+      "TechVendor agrees to the ninety day notice period",
+      "TechVendor will deliver the revised contract by next Friday"
+    ],
+    "action_item_candidates": [
+      "K. Chen: Get updated budget approved for GPU cluster line item before signing",
+      "J. Smith: Review GDPR DPA addendum for EU subsidiary coverage — deadline end of next week"
+    ],
+    "spoken_notes": [],
+    "advisory_only": true,
+    "captured_at": "2026-04-03T14:10:00Z"
+  },
+  "expected_routing": {
+    "primary": "law",
+    "secondary": "business",
+    "advisory_source": "voice",
+    "routed_to": "review_queue"
+  }
+}
