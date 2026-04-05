@@ -1,0 +1,17 @@
+{
+  "receipt_id": "platform-attach-001",
+  "domain": "business-law-accounting",
+  "platform": "30-validkernel-platform",
+  "attachment_type": "sovereign-domain-to-shared-platform",
+  "capabilities_attached": {
+    "trust_boundary": { "status": "OPERATIONAL", "bridge": "trustBoundaryBridge.ts" },
+    "receipt_emission": { "status": "OPERATIONAL", "bridge": "receiptBridge.ts" },
+    "replay_foundation": { "status": "RESERVED", "bridge": "replayBridge.ts" },
+    "typed_promotion": { "status": "OPERATIONAL", "bridge": "platformClient.ts" },
+    "api_runtime": { "status": "OPERATIONAL", "bridge": "platformClient.ts" }
+  },
+  "sovereignty_preserved": true,
+  "forbidden_imports": [],
+  "timestamp": "2026-04-05T00:00:00Z",
+  "authority": "L0_ARMAND_LEFEBVRE"
+}
