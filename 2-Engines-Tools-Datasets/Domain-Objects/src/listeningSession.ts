@@ -39,7 +39,7 @@ export interface DeadlineCandidate {
   promoted_deadline_id?: string;
 }
 
-export interface RoutingHint {
+export interface ListeningRoutingHint {
   kernel: KernelDomain;
   reason: string;
   confidence: number;
@@ -63,7 +63,7 @@ export interface ListeningSession {
   transcript_envelope_ids: string[];
   obligation_candidates: ObligationCandidate[];
   deadline_candidates: DeadlineCandidate[];
-  routing_hints: RoutingHint[];
+  routing_hints: ListeningRoutingHint[];
   advisory_packets: AdvisoryPacketReference[];
   participant_count?: number;
   matter_id?: string;
