@@ -1,0 +1,144 @@
+/**
+ * Operator Focus Styles
+ *
+ * Focus ring, pane dimming, breadcrumb, escalation banner.
+ * PRIMARY_ACTIVE gets strongest visual definition.
+ */
+
+/* ── Focus Ring ── */
+
+.cct-contextual-stage {
+  position: relative;
+  transition: opacity var(--transition-base), outline-color var(--transition-base);
+}
+
+.cct-contextual-stage--primary_active {
+  opacity: 1;
+  outline: var(--focus-ring-width-primary) solid var(--color-focus-primary);
+  outline-offset: -1px;
+  z-index: 2;
+}
+
+.cct-contextual-stage--secondary {
+  opacity: 0.85;
+  outline: var(--focus-ring-width-secondary) solid var(--color-focus-secondary);
+  outline-offset: -1px;
+}
+
+.cct-contextual-stage--advisory {
+  opacity: 0.6;
+  outline: 1px dashed var(--color-focus-advisory);
+  outline-offset: -1px;
+}
+
+.cct-contextual-stage--background_aware {
+  opacity: 0.4;
+  outline: none;
+}
+
+.cct-contextual-stage--quiet {
+  opacity: 0.25;
+  outline: none;
+}
+
+.cct-contextual-stage--locked_review {
+  opacity: 1;
+  outline: var(--focus-ring-width-locked) solid var(--color-focus-locked);
+  outline-offset: -1px;
+  z-index: 3;
+}
+
+/* ── Lock Indicator ── */
+
+.cct-contextual-stage__lock-indicator {
+  position: absolute;
+  top: var(--space-2);
+  right: var(--space-2);
+  z-index: 4;
+}
+
+.cct-contextual-stage__lock-icon {
+  display: inline-block;
+  padding: var(--space-1) var(--space-3);
+  background-color: var(--color-focus-locked);
+  color: var(--color-surface-000);
+  font-family: var(--font-mono);
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  border-radius: var(--radius-sm);
+}
+
+/* ── Focus Breadcrumb ── */
+
+.cct-focus-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  font-family: var(--font-mono);
+  font-size: var(--font-size-xs);
+  color: var(--color-neutral-400);
+  background-color: var(--color-surface-200);
+  border-bottom: 1px solid var(--color-neutral-800);
+}
+
+.cct-focus-breadcrumb__separator {
+  color: var(--color-neutral-600);
+}
+
+.cct-focus-breadcrumb__current {
+  color: var(--color-focus-primary);
+  font-weight: 600;
+}
+
+/* ── Escalation Banner ── */
+
+.cct-escalation-banner {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-2) var(--space-4);
+  font-family: var(--font-mono);
+  font-size: var(--font-size-sm);
+}
+
+.cct-escalation-banner--interruption {
+  background-color: var(--color-violation-crimson-muted);
+  color: var(--color-violation-crimson);
+  border-left: 3px solid var(--color-violation-crimson);
+}
+
+.cct-escalation-banner--advisory {
+  background-color: var(--color-accent-amber-muted);
+  color: var(--color-accent-amber);
+  border-left: 3px solid var(--color-accent-amber);
+}
+
+.cct-escalation-banner__message {
+  flex: 1;
+}
+
+.cct-escalation-banner__action {
+  font-family: var(--font-mono);
+  font-size: var(--font-size-xs);
+  color: var(--color-neutral-300);
+  background: none;
+  border: 1px solid var(--color-neutral-600);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+}
+
+.cct-escalation-banner__action:hover {
+  background-color: var(--color-surface-400);
+  border-color: var(--color-neutral-400);
+}
+
+/* ── Reduced Motion ── */
+
+@media (prefers-reduced-motion: reduce) {
+  .cct-contextual-stage {
+    transition: none;
+  }
+}

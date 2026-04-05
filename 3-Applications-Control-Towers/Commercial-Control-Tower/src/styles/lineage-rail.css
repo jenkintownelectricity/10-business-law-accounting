@@ -1,0 +1,206 @@
+/**
+ * Lineage Rail and Receipt Feed Styles
+ */
+
+/* ── Lineage Rail ── */
+
+.cct-lineage-rail {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: var(--color-surface-100);
+  font-family: var(--font-mono);
+  font-size: var(--font-size-sm);
+}
+
+.cct-lineage-rail__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--color-neutral-800);
+}
+
+.cct-lineage-rail__title {
+  font-size: var(--font-size-xs);
+  color: var(--color-neutral-400);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin: 0;
+}
+
+.cct-lineage-rail__entity-ref {
+  font-size: var(--font-size-xs);
+  color: var(--color-accent-blue);
+  font-family: var(--font-mono);
+}
+
+.cct-lineage-rail__entries {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.cct-lineage-rail__entry {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  padding: var(--space-2) var(--space-4);
+  border-bottom: 1px solid var(--color-neutral-800);
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+}
+
+.cct-lineage-rail__entry:hover {
+  background-color: var(--color-surface-300);
+}
+
+.cct-lineage-rail__entry--success {
+  border-left: 2px solid var(--color-accent-green);
+}
+
+.cct-lineage-rail__entry--failure {
+  border-left: 2px solid var(--color-accent-red);
+}
+
+.cct-lineage-rail__entry--pending {
+  border-left: 2px solid var(--color-accent-amber);
+}
+
+.cct-lineage-rail__entry-op {
+  color: var(--color-neutral-200);
+  font-size: var(--font-size-sm);
+}
+
+.cct-lineage-rail__entry-time {
+  color: var(--color-neutral-500);
+  font-size: var(--font-size-xs);
+}
+
+.cct-lineage-rail__entry-status {
+  font-size: var(--font-size-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.cct-lineage-rail__empty {
+  padding: var(--space-5);
+  color: var(--color-neutral-500);
+  text-align: center;
+  font-size: var(--font-size-sm);
+}
+
+/* ── Receipt Feed ── */
+
+.cct-receipt-feed {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-mono);
+}
+
+.cct-receipt-feed__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--color-neutral-800);
+}
+
+.cct-receipt-feed__title {
+  font-size: var(--font-size-xs);
+  color: var(--color-neutral-400);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin: 0;
+}
+
+.cct-receipt-feed__count {
+  font-size: var(--font-size-xs);
+  color: var(--color-neutral-500);
+  background-color: var(--color-surface-400);
+  padding: 0 var(--space-2);
+  border-radius: var(--radius-sm);
+}
+
+.cct-receipt-feed__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+}
+
+.cct-receipt-feed__item {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  border-bottom: 1px solid var(--color-surface-400);
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+  align-items: center;
+}
+
+.cct-receipt-feed__item:hover {
+  background-color: var(--color-surface-300);
+}
+
+.cct-receipt-feed__item--violation {
+  background-color: var(--color-violation-crimson-muted);
+}
+
+.cct-receipt-feed__item-op {
+  color: var(--color-neutral-200);
+  font-size: var(--font-size-sm);
+}
+
+.cct-receipt-feed__item-kernel {
+  color: var(--color-neutral-400);
+  font-size: var(--font-size-xs);
+}
+
+.cct-receipt-feed__item-time {
+  color: var(--color-neutral-500);
+  font-size: var(--font-size-xs);
+}
+
+.cct-receipt-feed__item-violation-marker {
+  color: var(--color-violation-crimson);
+  font-weight: 700;
+}
+
+/* ── Receipt Pulse Feed ── */
+
+.cct-receipt-pulse-feed__item--pulse {
+  animation: receipt-pulse 0.6s ease-out;
+}
+
+.cct-receipt-pulse-feed__item--violation-pulse {
+  animation: receipt-violation-pulse 0.6s ease-out;
+}
+
+@keyframes receipt-pulse {
+  0% { background-color: var(--color-accent-green-muted); }
+  100% { background-color: transparent; }
+}
+
+@keyframes receipt-violation-pulse {
+  0% { background-color: var(--color-violation-crimson-muted); }
+  100% { background-color: transparent; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cct-receipt-pulse-feed__item--pulse,
+  .cct-receipt-pulse-feed__item--violation-pulse {
+    animation: none;
+  }
+
+  .cct-receipt-pulse-feed__item--pulse {
+    background-color: var(--color-accent-green-muted);
+  }
+
+  .cct-receipt-pulse-feed__item--violation-pulse {
+    background-color: var(--color-violation-crimson-muted);
+  }
+}
