@@ -246,12 +246,12 @@ export async function executeInvoiceProcessing(
     state.vendor_validation = await dependencies.businessKernelValidateVendor(state.invoice!);
     state = addReceipt(state, 'business', 'vendor_validation', 'success');
 
-    if (state.vendor_validation.vendor_standing === 'delinquent') {
+    if (state.vendor_validation!.vendor_standing === 'delinquent') {
       state.warnings.push('Vendor is in delinquent standing — payment hold recommended.');
     }
-    if (!state.vendor_validation.payment_terms_match) {
+    if (!state.vendor_validation!.payment_terms_match) {
       state.warnings.push(
-        `Payment terms mismatch: invoice terms differ from expected (${state.vendor_validation.expected_terms}).`,
+        `Payment terms mismatch: invoice terms differ from expected (${state.vendor_validation!.expected_terms}).`,
       );
     }
   } catch (err) {
@@ -273,9 +273,9 @@ export async function executeInvoiceProcessing(
       state.contractual_check = await dependencies.lawKernelContractCheck(state.invoice!);
       state = addReceipt(state, 'law', 'invoice_contract_check', 'success');
 
-      if (state.contractual_check.pricing_compliant === false) {
+      if (state.contractual_check!.pricing_compliant === false) {
         state.warnings.push(
-          `Invoice pricing deviates from contract by ${state.contractual_check.pricing_variance ?? 0}%.`,
+          `Invoice pricing deviates from contract by ${state.contractual_check!.pricing_variance ?? 0}%.`,
         );
       }
     } catch (err) {

@@ -26,7 +26,7 @@ import type {
   SpeakerAttribution,
   ObligationCandidate,
   DeadlineCandidate,
-  RoutingHint,
+  ListeningRoutingHint,
   AdvisoryIntakePacket,
   CandidateAction,
   KernelDomain,
@@ -53,7 +53,7 @@ export interface ListeningOutputPacket {
   transcript_envelopes: TranscriptEnvelope[];
   obligation_candidates: ObligationCandidate[];
   deadline_candidates: DeadlineCandidate[];
-  routing_hints: RoutingHint[];
+  routing_hints: ListeningRoutingHint[];
   advisory_packets: AdvisoryIntakePacket[];
   kernel_receipts: KernelReceipt[];
   governance_notice: string;
@@ -81,7 +81,7 @@ export interface ListeningState {
   transcript_envelopes: TranscriptEnvelope[];
   obligation_candidates: ObligationCandidate[];
   deadline_candidates: DeadlineCandidate[];
-  routing_hints: RoutingHint[];
+  routing_hints: ListeningRoutingHint[];
   advisory_packets: AdvisoryIntakePacket[];
   kernel_receipts: KernelReceipt[];
   errors: ListeningError[];
@@ -455,7 +455,7 @@ export interface ListeningDependencies {
   analyzeRouting(
     transcript: string,
     envelopes: TranscriptEnvelope[],
-  ): Promise<RoutingHint[]>;
+  ): Promise<ListeningRoutingHint[]>;
   submitAdvisoryPackets(packets: AdvisoryIntakePacket[]): Promise<void>;
 }
 
