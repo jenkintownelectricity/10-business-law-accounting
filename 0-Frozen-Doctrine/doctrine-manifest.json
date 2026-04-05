@@ -1,0 +1,17 @@
+{
+  "domain": "business-law-accounting",
+  "version": "1.0.0",
+  "frozen_at": "2026-04-05T00:00:00Z",
+  "authority": "L0_ARMAND_LEFEBVRE",
+  "documents": [
+    { "id": "root-v1", "path": "Domain-Root/BUSINESS-LAW-ACCOUNTING-ROOT-v1.md", "status": "FROZEN" },
+    { "id": "trust-stack-v1", "path": "Trust-Posture/BUSINESS-LAW-ACCOUNTING-TRUST-STACK-v1.md", "status": "FROZEN" },
+    { "id": "kernel-stack-v1", "path": "Kernel-Stack/BUSINESS-LAW-ACCOUNTING-KERNEL-STACK-v1.md", "status": "FROZEN" },
+    { "id": "constraint-families-v1", "path": "Constraint-Families/BUSINESS-LAW-ACCOUNTING-CONSTRAINT-FAMILIES-v1.md", "status": "FROZEN" },
+    { "id": "commercial-orchestration-v1", "path": "Commercial-Orchestration/BUSINESS-LAW-ACCOUNTING-COMMERCIAL-ORCHESTRATION-v1.md", "status": "FROZEN" },
+    { "id": "voice-language-v1", "path": "Voice-and-Language-Assist/BUSINESS-LAW-ACCOUNTING-VOICE-LANGUAGE-AUGMENTATION-v1.md", "status": "FROZEN" }
+  ],
+  "change_control": "docs/DOMAIN-CHANGE-CONTROL-v1.md",
+  "utk_alignment": "00-Universal_Truth_Kernel",
+  "platform_attachment": "30-validkernel-platform"
+}
