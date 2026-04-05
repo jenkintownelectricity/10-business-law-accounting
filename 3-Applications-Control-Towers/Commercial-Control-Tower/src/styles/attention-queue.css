@@ -1,0 +1,150 @@
+/**
+ * Attention Queue Styles
+ *
+ * Contained glow for advisory, crimson for interruption, no flashing noise.
+ * Queue items never auto-open panes -- operator decides when to engage.
+ */
+
+/* ── Queue Container ── */
+
+.cct-attention-queue {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  padding: var(--space-3);
+  background-color: var(--color-surface-100);
+  border: 1px solid var(--color-neutral-800);
+  border-radius: var(--radius-md);
+  max-height: 320px;
+  overflow-y: auto;
+}
+
+.cct-attention-queue__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: var(--space-2);
+  border-bottom: 1px solid var(--color-neutral-800);
+}
+
+.cct-attention-queue__title {
+  font-family: var(--font-mono);
+  font-size: var(--font-size-xs);
+  color: var(--color-neutral-400);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin: 0;
+}
+
+.cct-attention-queue__badge {
+  font-family: var(--font-mono);
+  font-size: var(--font-size-xs);
+  padding: 0 var(--space-2);
+  border-radius: var(--radius-sm);
+  background-color: var(--color-surface-400);
+  color: var(--color-neutral-300);
+}
+
+/* ── Queue Item ── */
+
+.cct-attention-queue__item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+  border: 1px solid transparent;
+}
+
+.cct-attention-queue__item:hover {
+  background-color: var(--color-surface-300);
+}
+
+/* ── Advisory Item ── */
+
+.cct-attention-queue__item--advisory {
+  border-left: 2px solid var(--color-accent-amber);
+  background-color: transparent;
+  box-shadow: inset 0 0 8px rgba(240, 160, 48, 0.04);
+}
+
+.cct-attention-queue__item--advisory:hover {
+  box-shadow: inset 0 0 12px rgba(240, 160, 48, 0.08);
+}
+
+/* ── Interruption Item ── */
+
+.cct-attention-queue__item--interruption {
+  border-left: 2px solid var(--color-violation-crimson);
+  background-color: var(--color-violation-crimson-muted);
+}
+
+.cct-attention-queue__item--interruption:hover {
+  background-color: rgba(220, 20, 60, 0.1);
+}
+
+/* ── Item Content ── */
+
+.cct-attention-queue__item-indicator {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.cct-attention-queue__item--advisory .cct-attention-queue__item-indicator {
+  background-color: var(--color-accent-amber);
+}
+
+.cct-attention-queue__item--interruption .cct-attention-queue__item-indicator {
+  background-color: var(--color-violation-crimson);
+}
+
+.cct-attention-queue__item-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.cct-attention-queue__item-label {
+  font-family: var(--font-mono);
+  font-size: var(--font-size-sm);
+  color: var(--color-neutral-200);
+}
+
+.cct-attention-queue__item-source {
+  font-family: var(--font-mono);
+  font-size: var(--font-size-xs);
+  color: var(--color-neutral-500);
+}
+
+.cct-attention-queue__item-time {
+  font-family: var(--font-mono);
+  font-size: var(--font-size-xs);
+  color: var(--color-neutral-600);
+  flex-shrink: 0;
+}
+
+/* ── Empty Queue ── */
+
+.cct-attention-queue__empty {
+  padding: var(--space-4);
+  text-align: center;
+  color: var(--color-neutral-600);
+  font-family: var(--font-mono);
+  font-size: var(--font-size-sm);
+}
+
+/* ── No Flashing ── */
+/* Intentionally no @keyframes for flashing/pulsing.
+   Queue uses contained glow (box-shadow) only.
+   Violations use static crimson background, not flashing. */
+
+@media (prefers-reduced-motion: reduce) {
+  .cct-attention-queue__item {
+    transition: none;
+  }
+}

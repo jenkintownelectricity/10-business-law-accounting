@@ -1,0 +1,141 @@
+/**
+ * Industrial Night Theme Tokens
+ *
+ * CSS custom properties for the CCT industrial night theme.
+ * Focus hierarchy support: PRIMARY_ACTIVE through QUIET.
+ * Professional, muted palette with high-contrast signals for violations.
+ */
+
+:root {
+  /* ── Base Surface ── */
+  --color-surface-000: #0a0c10;
+  --color-surface-100: #0f1218;
+  --color-surface-200: #151920;
+  --color-surface-300: #1c2028;
+  --color-surface-400: #232830;
+  --color-surface-500: #2a3038;
+
+  /* ── Neutral Scale ── */
+  --color-neutral-100: #e8eaf0;
+  --color-neutral-200: #c8ccd6;
+  --color-neutral-300: #a0a8b8;
+  --color-neutral-400: #788098;
+  --color-neutral-500: #586070;
+  --color-neutral-600: #404858;
+  --color-neutral-700: #303840;
+  --color-neutral-800: #202830;
+  --color-neutral-900: #141820;
+
+  /* ── Accent: Green (Confidence HIGH, Promoted) ── */
+  --color-accent-green: #3ddc84;
+  --color-accent-green-muted: rgba(61, 220, 132, 0.12);
+
+  /* ── Accent: Amber (Confidence MEDIUM, Unpromoted) ── */
+  --color-accent-amber: #f0a030;
+  --color-accent-amber-muted: rgba(240, 160, 48, 0.12);
+
+  /* ── Accent: Red (Confidence LOW, Rejected) ── */
+  --color-accent-red: #e05050;
+  --color-accent-red-muted: rgba(224, 80, 80, 0.12);
+
+  /* ── Accent: Blue ── */
+  --color-accent-blue: #4a90d9;
+  --color-accent-blue-muted: rgba(74, 144, 217, 0.12);
+
+  /* ── Accent: Purple ── */
+  --color-accent-purple: #9b6dff;
+  --color-accent-purple-muted: rgba(155, 109, 255, 0.12);
+
+  /* ── Violation: Crimson ── */
+  --color-violation-crimson: #dc143c;
+  --color-violation-crimson-muted: rgba(220, 20, 60, 0.15);
+
+  /* ── Kernel Colors ── */
+  --color-kernel-commercial: #4a90d9;
+  --color-kernel-commercial-muted: rgba(74, 144, 217, 0.12);
+  --color-kernel-law: #9b6dff;
+  --color-kernel-law-muted: rgba(155, 109, 255, 0.12);
+  --color-kernel-accounting: #3ddc84;
+  --color-kernel-accounting-muted: rgba(61, 220, 132, 0.12);
+
+  /* ── Source Colors ── */
+  --color-source-ironear: #f0a030;
+  --color-source-ironear-muted: rgba(240, 160, 48, 0.12);
+  --color-source-ai: #9b6dff;
+  --color-source-ai-muted: rgba(155, 109, 255, 0.12);
+
+  /* ── Voice ── */
+  --color-voice-active: #4ad9c0;
+  --color-voice-active-muted: rgba(74, 217, 192, 0.12);
+
+  /* ── Focus Hierarchy ── */
+  --color-focus-primary: #e8eaf0;
+  --color-focus-primary-muted: rgba(232, 234, 240, 0.08);
+  --color-focus-secondary: #a0a8b8;
+  --color-focus-secondary-muted: rgba(160, 168, 184, 0.06);
+  --color-focus-advisory: #788098;
+  --color-focus-advisory-muted: rgba(120, 128, 152, 0.04);
+  --color-focus-background: #404858;
+  --color-focus-background-muted: rgba(64, 72, 88, 0.03);
+  --color-focus-locked: #f0a030;
+  --color-focus-locked-muted: rgba(240, 160, 48, 0.08);
+
+  /* ── Focus Ring ── */
+  --focus-ring-width-primary: 2px;
+  --focus-ring-width-secondary: 1px;
+  --focus-ring-width-locked: 3px;
+
+  /* ── Typography ── */
+  --font-mono: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-size-xs: 0.625rem;
+  --font-size-sm: 0.75rem;
+  --font-size-base: 0.8125rem;
+  --font-size-md: 0.875rem;
+  --font-size-lg: 1rem;
+
+  /* ── Spacing ── */
+  --space-1: 2px;
+  --space-2: 4px;
+  --space-3: 8px;
+  --space-4: 12px;
+  --space-5: 16px;
+  --space-6: 24px;
+  --space-7: 32px;
+  --space-8: 48px;
+
+  /* ── Border Radius ── */
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 6px;
+
+  /* ── Transitions ── */
+  --transition-fast: 100ms ease;
+  --transition-base: 200ms ease;
+  --transition-slow: 400ms ease;
+
+  /* ── Z-Index Scale ── */
+  --z-pane: 1;
+  --z-ghost-layer: 10;
+  --z-badge-strip: 20;
+  --z-command-palette: 100;
+  --z-violation-alert: 200;
+  --z-modal: 300;
+
+  /* ── Ghost Layer ── */
+  --ghost-overlay-opacity: 0.08;
+  --ghost-wireframe-width: 1px;
+  --ghost-delta-highlight: rgba(61, 220, 132, 0.15);
+
+  /* ── Ephemeral Layer ── */
+  --ephemeral-dashed-width: 1px;
+  --ephemeral-untrusted-opacity: 0.6;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --transition-fast: 0ms;
+    --transition-base: 0ms;
+    --transition-slow: 0ms;
+  }
+}

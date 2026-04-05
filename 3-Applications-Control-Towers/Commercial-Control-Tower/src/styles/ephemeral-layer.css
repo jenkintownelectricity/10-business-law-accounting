@@ -1,0 +1,112 @@
+/**
+ * Ephemeral Layer Styles
+ *
+ * Ephemeral proposal styles: dashed borders, amber untrusted indicators,
+ * crimson violations. Proposals are UNTRUSTED until explicitly promoted.
+ */
+
+.cct-ephemeral-proposal {
+  position: relative;
+  border: var(--ephemeral-dashed-width) dashed var(--color-accent-amber);
+  border-radius: var(--radius-md);
+  opacity: var(--ephemeral-untrusted-opacity);
+  background-color: var(--color-accent-amber-muted);
+  transition: border-color var(--transition-base), opacity var(--transition-base);
+}
+
+.cct-ephemeral-proposal--unpromoted {
+  border-color: var(--color-accent-amber);
+  border-style: dashed;
+  opacity: var(--ephemeral-untrusted-opacity);
+}
+
+.cct-ephemeral-proposal--promoted {
+  border-color: var(--color-accent-green);
+  border-style: solid;
+  opacity: 1;
+  background-color: var(--color-accent-green-muted);
+}
+
+.cct-ephemeral-proposal--rejected {
+  border-color: var(--color-accent-red);
+  border-style: solid;
+  opacity: 0.4;
+  background-color: var(--color-accent-red-muted);
+}
+
+.cct-ephemeral-proposal--violation {
+  border-color: var(--color-violation-crimson);
+  border-style: solid;
+  border-width: 2px;
+  opacity: 1;
+  background-color: var(--color-violation-crimson-muted);
+}
+
+/* ── Ephemeral Header ── */
+
+.cct-ephemeral-proposal__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-2) var(--space-3);
+  border-bottom: 1px solid var(--color-neutral-700);
+}
+
+.cct-ephemeral-proposal__trust-label {
+  font-family: var(--font-mono);
+  font-size: var(--font-size-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.cct-ephemeral-proposal__trust-label--unpromoted {
+  color: var(--color-accent-amber);
+}
+
+.cct-ephemeral-proposal__trust-label--promoted {
+  color: var(--color-accent-green);
+}
+
+.cct-ephemeral-proposal__trust-label--rejected {
+  color: var(--color-accent-red);
+}
+
+/* ── Ephemeral Content ── */
+
+.cct-ephemeral-proposal__content {
+  padding: var(--space-3);
+  font-size: var(--font-size-sm);
+  color: var(--color-neutral-300);
+}
+
+/* ── Ephemeral Actions ── */
+
+.cct-ephemeral-proposal__actions {
+  display: flex;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  border-top: 1px solid var(--color-neutral-700);
+}
+
+/* ── Violation Indicator ── */
+
+.cct-ephemeral-violation-indicator {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: var(--space-1) var(--space-2);
+  background-color: var(--color-violation-crimson);
+  color: white;
+  font-family: var(--font-mono);
+  font-size: var(--font-size-xs);
+  text-transform: uppercase;
+  border-bottom-left-radius: var(--radius-sm);
+}
+
+/* ── Reduced Motion ── */
+
+@media (prefers-reduced-motion: reduce) {
+  .cct-ephemeral-proposal {
+    transition: none;
+  }
+}

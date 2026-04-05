@@ -1,0 +1,145 @@
+/**
+ * Workstation Density Styles
+ *
+ * Dense workstation layout -- high information density without cramping.
+ * Designed for professional operators managing multiple data streams.
+ */
+
+.cct-workstation-shell {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background-color: var(--color-surface-000);
+  color: var(--color-neutral-100);
+  font-family: var(--font-sans);
+  font-size: var(--font-size-base);
+  line-height: 1.4;
+}
+
+.cct-workstation-shell__topbar {
+  display: flex;
+  align-items: center;
+  height: 36px;
+  min-height: 36px;
+  padding: 0 var(--space-4);
+  background-color: var(--color-surface-100);
+  border-bottom: 1px solid var(--color-neutral-800);
+  z-index: var(--z-pane);
+}
+
+.cct-workstation-shell__body {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.cct-workstation-shell__sidebar {
+  width: 48px;
+  min-width: 48px;
+  background-color: var(--color-surface-100);
+  border-right: 1px solid var(--color-neutral-800);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--space-3) 0;
+  gap: var(--space-2);
+}
+
+.cct-workstation-shell__main {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+}
+
+.cct-workstation-shell__rail {
+  width: 280px;
+  min-width: 280px;
+  background-color: var(--color-surface-100);
+  border-left: 1px solid var(--color-neutral-800);
+  overflow-y: auto;
+}
+
+/* ── Command Deck Grid ── */
+
+.cct-command-deck {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+.cct-command-deck__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 1px;
+  height: 100%;
+  background-color: var(--color-neutral-800);
+}
+
+.cct-command-deck__pane {
+  background-color: var(--color-surface-200);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: opacity var(--transition-base);
+}
+
+.cct-command-deck__pane-header {
+  display: flex;
+  align-items: center;
+  height: 28px;
+  min-height: 28px;
+  padding: 0 var(--space-3);
+  background-color: var(--color-surface-300);
+  border-bottom: 1px solid var(--color-neutral-700);
+}
+
+.cct-command-deck__pane-label {
+  font-family: var(--font-mono);
+  font-size: var(--font-size-xs);
+  color: var(--color-neutral-400);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.cct-command-deck__pane-content {
+  flex: 1;
+  overflow: auto;
+  padding: var(--space-3);
+}
+
+/* ── Focus-aware pane states ── */
+
+.cct-pane--primary {
+  opacity: 1;
+  outline: var(--focus-ring-width-primary) solid var(--color-focus-primary);
+  outline-offset: -1px;
+}
+
+.cct-pane--secondary {
+  opacity: 0.85;
+  outline: var(--focus-ring-width-secondary) solid var(--color-focus-secondary);
+  outline-offset: -1px;
+}
+
+.cct-pane--advisory {
+  opacity: 0.6;
+  outline: 1px dashed var(--color-focus-advisory);
+  outline-offset: -1px;
+}
+
+.cct-pane--background {
+  opacity: 0.4;
+}
+
+.cct-pane--quiet {
+  opacity: 0.25;
+}
+
+.cct-pane--locked {
+  opacity: 1;
+  outline: var(--focus-ring-width-locked) solid var(--color-focus-locked);
+  outline-offset: -1px;
+}
