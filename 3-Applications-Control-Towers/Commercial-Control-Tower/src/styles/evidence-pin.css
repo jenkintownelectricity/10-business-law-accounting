@@ -1,0 +1,127 @@
+/**
+ * Evidence Pin Styles
+ *
+ * Evidence pin tray and pinned card styles.
+ * Pinned evidence cannot be displaced by AI summary.
+ * References are stable across focus transitions.
+ */
+
+/* ── Pin Tray ── */
+
+.cct-evidence-pin-tray {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-3);
+  background-color: var(--color-surface-200);
+  border: 1px solid var(--color-neutral-700);
+  border-radius: var(--radius-md);
+  min-height: 48px;
+}
+
+.cct-evidence-pin-tray__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: var(--space-2);
+  border-bottom: 1px solid var(--color-neutral-800);
+}
+
+.cct-evidence-pin-tray__title {
+  font-family: var(--font-mono);
+  font-size: var(--font-size-xs);
+  color: var(--color-neutral-400);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin: 0;
+}
+
+.cct-evidence-pin-tray__count {
+  font-family: var(--font-mono);
+  font-size: var(--font-size-xs);
+  color: var(--color-neutral-500);
+}
+
+/* ── Pinned Card ── */
+
+.cct-evidence-pin-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  padding: var(--space-2) var(--space-3);
+  background-color: var(--color-surface-300);
+  border: 1px solid var(--color-neutral-600);
+  border-left: 3px solid var(--color-accent-blue);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: var(--font-size-sm);
+  position: relative;
+}
+
+.cct-evidence-pin-card--stable {
+  border-left-color: var(--color-accent-green);
+}
+
+.cct-evidence-pin-card--operator-pinned {
+  border-left-color: var(--color-focus-primary);
+}
+
+.cct-evidence-pin-card__reference {
+  color: var(--color-neutral-200);
+  font-size: var(--font-size-sm);
+  word-break: break-all;
+}
+
+.cct-evidence-pin-card__source {
+  color: var(--color-neutral-500);
+  font-size: var(--font-size-xs);
+}
+
+.cct-evidence-pin-card__timestamp {
+  color: var(--color-neutral-500);
+  font-size: var(--font-size-xs);
+}
+
+.cct-evidence-pin-card__unpin {
+  position: absolute;
+  top: var(--space-1);
+  right: var(--space-1);
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  color: var(--color-neutral-500);
+  font-size: var(--font-size-xs);
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+
+.cct-evidence-pin-card:hover .cct-evidence-pin-card__unpin {
+  opacity: 1;
+}
+
+.cct-evidence-pin-card__unpin:hover {
+  color: var(--color-accent-red);
+}
+
+/* ── Protected Indicator ── */
+
+.cct-evidence-pin-card__protected {
+  font-size: var(--font-size-xs);
+  color: var(--color-accent-amber);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ── Empty State ── */
+
+.cct-evidence-pin-tray__empty {
+  padding: var(--space-4);
+  text-align: center;
+  color: var(--color-neutral-600);
+  font-size: var(--font-size-sm);
+}
