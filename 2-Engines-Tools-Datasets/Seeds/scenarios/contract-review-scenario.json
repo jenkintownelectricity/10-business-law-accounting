@@ -1,0 +1,43 @@
+{
+  "scenario_id": "seed-contract-review-001",
+  "title": "Software Licensing Agreement Review",
+  "description": "Review of a software licensing agreement between Acme Corp and TechVendor Inc for enterprise SaaS platform access.",
+  "domains": ["law", "business"],
+  "priority": "high",
+  "matter": {
+    "id": "matter-contract-review-001",
+    "title": "TechVendor SaaS License Agreement Review",
+    "description": "Annual enterprise license agreement for TechVendor cloud platform. Three-year term with auto-renewal. Includes data processing addendum.",
+    "matter_type": "contract_review",
+    "entity_id": "entity-acme-corp",
+    "status": "in_review"
+  },
+  "contract": {
+    "id": "contract-tv-saas-001",
+    "title": "Enterprise SaaS License Agreement",
+    "parties": [
+      { "name": "Acme Corporation", "role": "licensee", "entity_id": "entity-acme-corp" },
+      { "name": "TechVendor Inc.", "role": "licensor", "entity_id": "entity-techvendor" }
+    ],
+    "contract_type": "software_license",
+    "effective_date": "2026-05-01",
+    "expiration_date": "2029-04-30",
+    "auto_renewal": true,
+    "renewal_notice_days": 90,
+    "total_value": 450000,
+    "currency": "USD",
+    "key_clauses": [
+      "Data processing addendum with GDPR compliance requirements",
+      "99.9% uptime SLA with service credits",
+      "Limitation of liability capped at 12 months of fees",
+      "Termination for convenience with 60-day notice"
+    ],
+    "status": "draft",
+    "signed": false
+  },
+  "expected_routing": {
+    "primary": "law",
+    "secondary": "business",
+    "constraints_to_evaluate": ["LAW-001", "LAW-002", "BUS-001"]
+  }
+}
