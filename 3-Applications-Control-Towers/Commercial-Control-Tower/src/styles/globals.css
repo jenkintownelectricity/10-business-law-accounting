@@ -57,13 +57,20 @@
   --font-family-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-family-mono: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
 
-  --font-size-xs: 0.6875rem;   /* 11px */
-  --font-size-sm: 0.75rem;     /* 12px */
-  --font-size-base: 0.8125rem; /* 13px */
-  --font-size-md: 0.875rem;    /* 14px */
-  --font-size-lg: 1rem;        /* 16px */
-  --font-size-xl: 1.25rem;     /* 20px */
-  --font-size-2xl: 1.5rem;     /* 24px */
+  --font-size-xs: 0.6875rem;
+  /* 11px */
+  --font-size-sm: 0.75rem;
+  /* 12px */
+  --font-size-base: 0.8125rem;
+  /* 13px */
+  --font-size-md: 0.875rem;
+  /* 14px */
+  --font-size-lg: 1rem;
+  /* 16px */
+  --font-size-xl: 1.25rem;
+  /* 20px */
+  --font-size-2xl: 1.5rem;
+  /* 24px */
 
   --line-height-tight: 1.25;
   --line-height-normal: 1.5;
@@ -242,16 +249,46 @@ body {
   white-space: nowrap;
 }
 
-.badge--active   { background: var(--color-accent-green-muted); color: var(--color-accent-green); }
-.badge--pending  { background: var(--color-accent-amber-muted); color: var(--color-accent-amber); }
-.badge--overdue  { background: var(--color-accent-red-muted);   color: var(--color-accent-red); }
-.badge--draft    { background: var(--color-bg-elevated);        color: var(--color-text-tertiary); }
-.badge--closed   { background: var(--color-bg-tertiary);        color: var(--color-text-muted); }
+.badge--active {
+  background: var(--color-accent-green-muted);
+  color: var(--color-accent-green);
+}
+
+.badge--pending {
+  background: var(--color-accent-amber-muted);
+  color: var(--color-accent-amber);
+}
+
+.badge--overdue {
+  background: var(--color-accent-red-muted);
+  color: var(--color-accent-red);
+}
+
+.badge--draft {
+  background: var(--color-bg-elevated);
+  color: var(--color-text-tertiary);
+}
+
+.badge--closed {
+  background: var(--color-bg-tertiary);
+  color: var(--color-text-muted);
+}
 
 /* --- Kernel Identity Badges --- */
-.badge--kernel-law        { background: var(--color-accent-blue-muted);   color: var(--color-kernel-law); }
-.badge--kernel-accounting { background: var(--color-accent-green-muted);  color: var(--color-kernel-accounting); }
-.badge--kernel-commercial { background: var(--color-accent-amber-muted);  color: var(--color-kernel-commercial); }
+.badge--kernel-law {
+  background: var(--color-accent-blue-muted);
+  color: var(--color-kernel-law);
+}
+
+.badge--kernel-accounting {
+  background: var(--color-accent-green-muted);
+  color: var(--color-kernel-accounting);
+}
+
+.badge--kernel-commercial {
+  background: var(--color-accent-amber-muted);
+  color: var(--color-kernel-commercial);
+}
 
 /* --- Untrusted / Voice Advisory Badge --- */
 .badge--untrusted {
@@ -420,8 +457,15 @@ body {
 }
 
 @keyframes pulse-dot {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.4; }
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.4;
+  }
 }
 
 /* ===== Untrusted Content Wrapper ===== */
@@ -478,31 +522,97 @@ body {
 }
 
 /* ===== Utility Classes ===== */
-.text-muted { color: var(--color-text-muted); }
-.text-secondary { color: var(--color-text-secondary); }
-.text-primary { color: var(--color-text-primary); }
-.text-mono { font-family: var(--font-family-mono); }
-.text-xs { font-size: var(--font-size-xs); }
-.text-sm { font-size: var(--font-size-sm); }
-.text-md { font-size: var(--font-size-md); }
-.text-lg { font-size: var(--font-size-lg); }
-.font-semibold { font-weight: 600; }
+.text-muted {
+  color: var(--color-text-muted);
+}
 
-.flex { display: flex; }
-.flex-col { flex-direction: column; }
-.items-center { align-items: center; }
-.justify-between { justify-content: space-between; }
-.gap-1 { gap: var(--space-1); }
-.gap-2 { gap: var(--space-2); }
-.gap-3 { gap: var(--space-3); }
-.gap-4 { gap: var(--space-4); }
+.text-secondary {
+  color: var(--color-text-secondary);
+}
 
-.p-2 { padding: var(--space-2); }
-.p-3 { padding: var(--space-3); }
-.p-4 { padding: var(--space-4); }
-.mb-2 { margin-bottom: var(--space-2); }
-.mb-3 { margin-bottom: var(--space-3); }
-.mb-4 { margin-bottom: var(--space-4); }
+.text-primary {
+  color: var(--color-text-primary);
+}
+
+.text-mono {
+  font-family: var(--font-family-mono);
+}
+
+.text-xs {
+  font-size: var(--font-size-xs);
+}
+
+.text-sm {
+  font-size: var(--font-size-sm);
+}
+
+.text-md {
+  font-size: var(--font-size-md);
+}
+
+.text-lg {
+  font-size: var(--font-size-lg);
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.gap-1 {
+  gap: var(--space-1);
+}
+
+.gap-2 {
+  gap: var(--space-2);
+}
+
+.gap-3 {
+  gap: var(--space-3);
+}
+
+.gap-4 {
+  gap: var(--space-4);
+}
+
+.p-2 {
+  padding: var(--space-2);
+}
+
+.p-3 {
+  padding: var(--space-3);
+}
+
+.p-4 {
+  padding: var(--space-4);
+}
+
+.mb-2 {
+  margin-bottom: var(--space-2);
+}
+
+.mb-3 {
+  margin-bottom: var(--space-3);
+}
+
+.mb-4 {
+  margin-bottom: var(--space-4);
+}
 
 .truncate {
   overflow: hidden;
@@ -520,4 +630,20 @@ body {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border: 0;
+}
+
+/* Finalize the Spine Aesthetics */
+.workspace-sidebar a {
+  color: var(--color-text-secondary);
+  text-decoration: none;
+}
+
+.workspace-sidebar a:hover {
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-hover);
+}
+
+.workspace-sidebar span {
+  color: var(--color-kernel-law);
+  /* Makes the '#' icons pop in Kernel Blue */
 }

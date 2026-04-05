@@ -1,7 +1,4 @@
 {
-  "$schema": "https://openapi.vercel.sh/vercel.json",
   "installCommand": "pnpm install",
-  "buildCommand": "pnpm turbo run build --filter=@10-bla/commercial-control-tower",
-  "outputDirectory": "3-Applications-Control-Towers/Commercial-Control-Tower/.next",
-  "framework": "nextjs"
+  "buildCommand": "cd ../.. && pnpm turbo run build --filter=@10-bla/commercial-control-tower"
 }
