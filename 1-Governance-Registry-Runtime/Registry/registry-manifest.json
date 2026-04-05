@@ -1,0 +1,21 @@
+{
+  "domain": "business-law-accounting",
+  "version": "1.0.0",
+  "catalogs": [
+    "clients",
+    "vendors",
+    "contracts",
+    "matters",
+    "accounting-events",
+    "obligations",
+    "deadlines",
+    "entities",
+    "counterparties",
+    "receipts",
+    "decision-bundles",
+    "transcript-envelopes",
+    "spoken-note-envelopes",
+    "language-normalization-outputs",
+    "advisory-intake-packets"
+  ]
+}
