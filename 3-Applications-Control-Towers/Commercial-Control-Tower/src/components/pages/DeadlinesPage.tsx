@@ -36,7 +36,7 @@ const STATUS_LABELS: Record<DeadlineStatus, string> = {
 
 export function DeadlinesPage() {
   const deadlines = PLACEHOLDER_DEADLINES;
-  const viewMode: 'timeline' | 'list' = 'timeline';
+  const viewMode = 'timeline' as 'timeline' | 'list';
 
   return (
     <div className="cct-page cct-page-deadlines">

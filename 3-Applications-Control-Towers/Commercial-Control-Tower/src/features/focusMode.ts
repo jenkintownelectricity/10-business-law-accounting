@@ -6,7 +6,7 @@
 //  Keyboard shortcut: Ctrl+Shift+F
 // ──────────────────────────────────────────────────────────────
 
-import type { Matter, KernelDomain } from '../../../../2-Engines-Tools-Datasets/Domain-Objects/src/index.js';
+import type { Matter, KernelDomain } from '@10-bla/domain-objects';
 
 // ── Configuration ────────────────────────────────────────────
 

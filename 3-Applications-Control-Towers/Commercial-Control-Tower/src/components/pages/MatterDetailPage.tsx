@@ -84,7 +84,7 @@ export function MatterDetailPage() {
   const matter = PLACEHOLDER_MATTER;
   const actions = PLACEHOLDER_ACTIONS;
   const notes = PLACEHOLDER_NOTES;
-  const activeTab: DetailTab = 'overview';
+  const activeTab = 'overview' as DetailTab;
   const focusMode = false;
 
   return (
