@@ -1,4 +1,0 @@
-{
-  "installCommand": "pnpm install",
-  "buildCommand": "cd ../.. && pnpm turbo run build --filter=@10-bla/commercial-control-tower"
-}
