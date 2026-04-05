@@ -1,141 +1,50 @@
 {
   "scenario_id": "seed-commercial-matter-001",
-  "scenario_name": "Cross-Domain Acquisition Assessment — Meridian Analytics",
-  "description": "Client considering acquisition of smaller competitor Meridian Analytics. Requires business assessment (market impact, operational integration), legal assessment (regulatory compliance, due diligence), and accounting assessment (valuation, tax implications, financial consolidation).",
+  "title": "Cross-Domain Acquisition Assessment",
+  "description": "Full cross-domain assessment for proposed acquisition of DataPipe Analytics. Requires business valuation, legal due diligence, and financial impact analysis.",
+  "domains": ["business", "law", "accounting"],
+  "priority": "critical",
   "matter": {
-    "id": "matter-seed-acquisition-001",
-    "title": "Meridian Analytics Acquisition — Strategic Assessment",
-    "description": "Comprehensive cross-domain assessment of proposed acquisition of Meridian Analytics Inc., a data analytics competitor with $12M annual revenue and 85 employees. Client seeks unified recommendation spanning business strategy, legal compliance, and financial impact.",
-    "matter_type": "cross-domain",
-    "assigned_kernels": ["business", "law", "accounting"],
-    "client_id": "entity-client-apex-001",
-    "counterparty_ids": ["entity-meridian-001"],
-    "priority": "critical",
-    "status": "under_review",
-    "related_contracts": ["contract-loi-meridian-001", "contract-nda-meridian-001"],
-    "related_obligations": ["obl-due-diligence-deadline", "obl-regulatory-filing", "obl-nda-confidentiality"],
-    "related_accounting_events": [],
-    "evidence_ids": ["evidence-meridian-financials", "evidence-market-analysis", "evidence-regulatory-memo"],
-    "receipt_ids": [],
-    "follow_up_actions": [
-      {
-        "id": "fua-001",
-        "title": "Complete financial due diligence",
-        "description": "Review Meridian's audited financials for past 3 fiscal years, assess quality of earnings, and identify any off-balance-sheet liabilities",
-        "assigned_kernel": "accounting",
-        "due_date": "2026-04-30",
-        "status": "in_progress",
-        "priority": "critical"
-      },
-      {
-        "id": "fua-002",
-        "title": "Regulatory compliance assessment",
-        "description": "Assess antitrust implications of acquisition given combined market share in data analytics sector. Determine if HSR filing is required.",
-        "assigned_kernel": "law",
-        "due_date": "2026-04-20",
-        "status": "in_progress",
-        "priority": "critical"
-      },
-      {
-        "id": "fua-003",
-        "title": "Operational integration planning",
-        "description": "Develop preliminary integration plan covering technology stack consolidation, team restructuring, and client migration timeline",
-        "assigned_kernel": "business",
-        "due_date": "2026-05-15",
-        "status": "pending",
-        "priority": "high"
-      },
-      {
-        "id": "fua-004",
-        "title": "Tax structure optimization",
-        "description": "Evaluate acquisition structure options (asset purchase vs. stock purchase) for tax efficiency. Model Section 338(h)(10) election implications.",
-        "assigned_kernel": "accounting",
-        "due_date": "2026-05-01",
-        "status": "pending",
-        "priority": "high"
-      },
-      {
-        "id": "fua-005",
-        "title": "IP and contract review",
-        "description": "Review Meridian's IP portfolio, key customer contracts for change-of-control clauses, and employment agreements for non-compete provisions",
-        "assigned_kernel": "law",
-        "due_date": "2026-04-25",
-        "status": "in_progress",
-        "priority": "high"
-      }
-    ],
-    "tags": ["acquisition", "strategic", "cross-domain", "critical", "meridian-analytics"],
-    "notes": [
-      {
-        "id": "note-001",
-        "content": "Initial LOI signed March 15. Exclusivity period runs through June 30, 2026. Client authorized up to $18M for acquisition.",
-        "note_type": "manual",
-        "source": "practitioner-jthompson",
-        "created_at": "2026-03-16T09:00:00Z",
-        "trust_level": "TRUSTED"
-      },
-      {
-        "id": "note-002",
-        "content": "Meridian's largest client (DataTech Corp, 22% of revenue) has a change-of-control clause that allows termination with 90 days notice. This represents $2.64M annual revenue at risk.",
-        "note_type": "manual",
-        "source": "practitioner-slee",
-        "created_at": "2026-04-02T14:30:00Z",
-        "trust_level": "TRUSTED"
-      }
-    ],
-    "created_at": "2026-03-16T08:00:00Z",
-    "updated_at": "2026-04-05T10:00:00Z",
-    "created_by": "practitioner-jthompson",
-    "source_surface": "commercial-control-tower"
+    "id": "matter-acquisition-001",
+    "title": "DataPipe Analytics Acquisition Assessment",
+    "description": "Proposed acquisition of DataPipe Analytics Inc. Pre-revenue data analytics startup with 12 employees, 3 patents, and $2.1M in venture funding. Purchase price: $8.5M.",
+    "matter_type": "acquisition",
+    "entity_id": "entity-acme-corp",
+    "risk_score": 0.65,
+    "status": "in_review"
   },
-  "kernel_assessments_needed": {
-    "business": {
-      "areas": [
-        "Market impact analysis — combined market share and competitive positioning",
-        "Operational integration feasibility — technology, team, processes",
-        "Client retention risk assessment — particularly DataTech Corp account",
-        "Strategic alignment with client's 3-year growth plan",
-        "Synergy identification — revenue synergies and cost savings"
-      ],
-      "key_metrics": {
-        "target_revenue": 12000000,
-        "target_employees": 85,
-        "key_client_concentration_risk": 0.22,
-        "estimated_synergies": 3500000
-      }
-    },
-    "law": {
-      "areas": [
-        "Antitrust / HSR filing requirements — combined entity market share analysis",
-        "Change-of-control clause review across all material contracts",
-        "IP portfolio assessment and freedom-to-operate analysis",
-        "Employment agreement review — non-competes, retention packages",
-        "Regulatory compliance status — data privacy, industry regulations",
-        "Representations and warranties for purchase agreement"
-      ],
-      "key_concerns": [
-        "HSR filing threshold likely exceeded — $111.4M in 2026",
-        "3 key customer contracts have change-of-control provisions",
-        "Meridian has 2 pending patent applications"
-      ]
-    },
-    "accounting": {
-      "areas": [
-        "Valuation analysis — DCF, comparable transactions, asset-based",
-        "Quality of earnings assessment — normalize for one-time items",
-        "Tax structure optimization — asset vs. stock purchase",
-        "Financial consolidation planning — GAAP compliance",
-        "Purchase price allocation — goodwill and intangible assets",
-        "Working capital adjustment mechanism"
-      ],
-      "key_financials": {
-        "asking_price": 16500000,
-        "authorized_ceiling": 18000000,
-        "target_ebitda": 2400000,
-        "implied_multiple": 6.875,
-        "estimated_goodwill": 8500000,
-        "tax_savings_asset_purchase": 2200000
-      }
-    }
+  "business_context": {
+    "acquiring_entity": { "id": "entity-acme-corp", "name": "Acme Corporation", "entity_type": "corporation" },
+    "target_entity": { "id": "entity-datapipe", "name": "DataPipe Analytics Inc.", "entity_type": "corporation" },
+    "acquisition_type": "asset_purchase",
+    "proposed_price": 8500000,
+    "currency": "USD",
+    "strategic_rationale": "Expand data analytics capabilities and acquire patent portfolio"
+  },
+  "legal_context": {
+    "contracts_to_review": [
+      { "id": "contract-dp-ip-001", "title": "IP Assignment Agreement", "status": "draft" },
+      { "id": "contract-dp-emp-001", "title": "Key Employee Retention Agreements", "status": "draft" },
+      { "id": "contract-dp-purchase-001", "title": "Asset Purchase Agreement", "status": "draft" }
+    ],
+    "compliance_areas": ["antitrust", "ip_transfer", "employment_law"],
+    "key_deadlines": [
+      { "description": "LOI expiration", "date": "2026-05-15" },
+      { "description": "Due diligence completion", "date": "2026-06-30" },
+      { "description": "Regulatory filing deadline", "date": "2026-07-15" }
+    ]
+  },
+  "financial_context": {
+    "purchase_price": 8500000,
+    "estimated_integration_costs": 1200000,
+    "target_revenue_current": 0,
+    "target_burn_rate_monthly": 175000,
+    "target_assets": 3200000,
+    "target_liabilities": 450000
+  },
+  "expected_routing": {
+    "primary": "business",
+    "all_kernels_required": true,
+    "constraints_to_evaluate": ["BUS-001", "BUS-004", "LAW-001", "LAW-005", "ACCT-001", "ACCT-004"]
   }
 }
