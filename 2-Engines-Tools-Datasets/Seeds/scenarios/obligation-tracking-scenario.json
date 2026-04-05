@@ -1,0 +1,196 @@
+{
+  "scenario_id": "seed-obligation-tracking-001",
+  "scenario_name": "Commercial Lease Obligation Tracking",
+  "description": "Multiple obligations from a commercial lease agreement for office space at 500 Market Street. Includes payment deadlines, financial obligations, and compliance requirements.",
+  "source_contract": {
+    "id": "contract-lease-500market-001",
+    "title": "Commercial Lease — 500 Market Street, Suite 400",
+    "contract_type": "lease",
+    "status": "active",
+    "effective_date": "2025-01-01",
+    "expiration_date": "2029-12-31",
+    "landlord": "Market Street Properties LLC",
+    "tenant": "Our Company Inc."
+  },
+  "obligations": [
+    {
+      "id": "obl-lease-rent-001",
+      "title": "Monthly Base Rent Payment",
+      "description": "Base rent of $28,500 per month due on the 1st of each month. Late payment incurs 5% penalty after 10-day grace period.",
+      "obligation_type": "payment",
+      "obligor_entity_id": "entity-our-company-001",
+      "obligee_entity_id": "entity-market-street-props-001",
+      "assigned_kernel": "accounting",
+      "due_date": "2026-05-01",
+      "recurring": true,
+      "recurrence_schedule": "Monthly on the 1st",
+      "financial_impact": {
+        "amount": 28500,
+        "currency": "USD",
+        "impact_type": "cost",
+        "recurring": true,
+        "recurrence_period": "monthly"
+      },
+      "compliance_status": "compliant",
+      "obligation_status": "active",
+      "priority": "high",
+      "trust_level": "TRUSTED",
+      "tags": ["rent", "monthly", "lease", "500-market"]
+    },
+    {
+      "id": "obl-lease-cam-001",
+      "title": "CAM Charges — Quarterly Reconciliation",
+      "description": "Common Area Maintenance charges estimated at $4,200/month, reconciled quarterly against actuals. Overpayment credited; underpayment due within 30 days of reconciliation statement.",
+      "obligation_type": "payment",
+      "obligor_entity_id": "entity-our-company-001",
+      "obligee_entity_id": "entity-market-street-props-001",
+      "assigned_kernel": "accounting",
+      "due_date": "2026-07-31",
+      "recurring": true,
+      "recurrence_schedule": "Quarterly — 30 days after reconciliation statement",
+      "financial_impact": {
+        "amount": 12600,
+        "currency": "USD",
+        "impact_type": "cost",
+        "recurring": true,
+        "recurrence_period": "quarterly"
+      },
+      "compliance_status": "compliant",
+      "obligation_status": "active",
+      "priority": "medium",
+      "trust_level": "TRUSTED",
+      "tags": ["cam", "quarterly", "lease", "500-market"]
+    },
+    {
+      "id": "obl-lease-insurance-001",
+      "title": "Maintain Commercial General Liability Insurance",
+      "description": "Tenant must maintain CGL insurance with minimum $2M per occurrence / $5M aggregate. Certificate of insurance due to landlord annually by January 15.",
+      "obligation_type": "compliance",
+      "obligor_entity_id": "entity-our-company-001",
+      "obligee_entity_id": "entity-market-street-props-001",
+      "assigned_kernel": "law",
+      "due_date": "2027-01-15",
+      "recurring": true,
+      "recurrence_schedule": "Annually by January 15",
+      "financial_impact": {
+        "amount": 18000,
+        "currency": "USD",
+        "impact_type": "cost",
+        "recurring": true,
+        "recurrence_period": "annually",
+        "notes": "Estimated annual premium for required coverage"
+      },
+      "compliance_status": "compliant",
+      "obligation_status": "active",
+      "priority": "high",
+      "trust_level": "TRUSTED",
+      "tags": ["insurance", "compliance", "annual", "lease", "500-market"]
+    },
+    {
+      "id": "obl-lease-maintenance-001",
+      "title": "Interior Maintenance and Repair Obligation",
+      "description": "Tenant responsible for all interior maintenance, repairs, and replacements except structural and building systems. Must maintain premises in good condition.",
+      "obligation_type": "performance",
+      "obligor_entity_id": "entity-our-company-001",
+      "obligee_entity_id": "entity-market-street-props-001",
+      "assigned_kernel": "business",
+      "recurring": false,
+      "financial_impact": null,
+      "compliance_status": "compliant",
+      "obligation_status": "active",
+      "priority": "medium",
+      "trust_level": "TRUSTED",
+      "tags": ["maintenance", "ongoing", "lease", "500-market"]
+    },
+    {
+      "id": "obl-lease-estoppel-001",
+      "title": "Estoppel Certificate — Due Within 10 Business Days",
+      "description": "Upon landlord request, tenant must deliver estoppel certificate within 10 business days confirming lease terms, rent status, and absence of defaults.",
+      "obligation_type": "notification",
+      "obligor_entity_id": "entity-our-company-001",
+      "obligee_entity_id": "entity-market-street-props-001",
+      "assigned_kernel": "law",
+      "recurring": false,
+      "financial_impact": null,
+      "compliance_status": "pending_review",
+      "obligation_status": "active",
+      "priority": "medium",
+      "trust_level": "TRUSTED",
+      "tags": ["estoppel", "on-demand", "lease", "500-market"]
+    },
+    {
+      "id": "obl-lease-renewal-notice-001",
+      "title": "Renewal Option Exercise Notice",
+      "description": "Tenant has one 5-year renewal option. Must provide written notice of exercise at least 180 days before lease expiration (by July 4, 2029).",
+      "obligation_type": "notification",
+      "obligor_entity_id": "entity-our-company-001",
+      "obligee_entity_id": "entity-market-street-props-001",
+      "assigned_kernel": "business",
+      "due_date": "2029-07-04",
+      "recurring": false,
+      "financial_impact": {
+        "amount": 1710000,
+        "currency": "USD",
+        "impact_type": "cost",
+        "recurring": false,
+        "notes": "5-year renewal at estimated fair market rent — failure to exercise forfeits option"
+      },
+      "compliance_status": "pending_review",
+      "obligation_status": "active",
+      "priority": "high",
+      "trust_level": "TRUSTED",
+      "tags": ["renewal", "option", "critical-deadline", "lease", "500-market"]
+    },
+    {
+      "id": "obl-lease-property-tax-001",
+      "title": "Property Tax Escalation Payment",
+      "description": "Tenant responsible for pro-rata share of property tax increases above base year (2025). Annual true-up due within 60 days of tax bill.",
+      "obligation_type": "payment",
+      "obligor_entity_id": "entity-our-company-001",
+      "obligee_entity_id": "entity-market-street-props-001",
+      "assigned_kernel": "accounting",
+      "due_date": "2026-08-15",
+      "recurring": true,
+      "recurrence_schedule": "Annually — within 60 days of property tax bill",
+      "financial_impact": {
+        "amount": 8500,
+        "currency": "USD",
+        "impact_type": "cost",
+        "recurring": true,
+        "recurrence_period": "annually",
+        "notes": "Estimated based on 3% annual property tax increase"
+      },
+      "compliance_status": "compliant",
+      "obligation_status": "active",
+      "priority": "medium",
+      "trust_level": "TRUSTED",
+      "tags": ["property-tax", "escalation", "annual", "lease", "500-market"]
+    }
+  ],
+  "deadlines": [
+    {
+      "title": "Monthly Rent Due",
+      "due_date": "2026-05-01",
+      "criticality": "contractual",
+      "consequence": "5% late penalty after 10-day grace period"
+    },
+    {
+      "title": "Q2 CAM Reconciliation Due",
+      "due_date": "2026-07-31",
+      "criticality": "contractual",
+      "consequence": "Interest on underpayment"
+    },
+    {
+      "title": "Insurance Certificate Renewal",
+      "due_date": "2027-01-15",
+      "criticality": "contractual",
+      "consequence": "Lease default if not maintained"
+    },
+    {
+      "title": "Renewal Option Exercise Deadline",
+      "due_date": "2029-07-04",
+      "criticality": "absolute",
+      "consequence": "Permanent loss of renewal option — must vacate or renegotiate at market terms"
+    }
+  ]
+}

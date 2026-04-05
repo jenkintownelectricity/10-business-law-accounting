@@ -1,0 +1,41 @@
+{
+  "domain": "business-law-accounting",
+  "version": "1.0.0",
+  "runtime_modules": [
+    {
+      "name": "commercialWorkflowRuntime",
+      "description": "Main workflow engine managing matter state transitions and kernel coordination",
+      "entry": "./commercialWorkflowRuntime.ts"
+    },
+    {
+      "name": "matterStateTransitions",
+      "description": "State machine for matter lifecycle with typed transition rules",
+      "entry": "./matterStateTransitions.ts"
+    },
+    {
+      "name": "orchestrationHooks",
+      "description": "Hooks into 30-validkernel-platform for trust boundary and receipt operations",
+      "entry": "./orchestrationHooks.ts"
+    },
+    {
+      "name": "domainRuntimeFacade",
+      "description": "Unified facade over three kernels and orchestrator",
+      "entry": "./domainRuntimeFacade.ts"
+    },
+    {
+      "name": "voiceIntakeRouting",
+      "description": "Routes voice intake through trust-boundary handling",
+      "entry": "./voiceIntakeRouting.ts"
+    },
+    {
+      "name": "languageNormalizationRouting",
+      "description": "Routes language normalization requests to appropriate kernels",
+      "entry": "./languageNormalizationRouting.ts"
+    },
+    {
+      "name": "advisoryPacketRouting",
+      "description": "Routes advisory packets from voice/language layers to review queues",
+      "entry": "./advisoryPacketRouting.ts"
+    }
+  ]
+}

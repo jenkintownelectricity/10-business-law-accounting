@@ -1,0 +1,187 @@
+{
+  "scenario_id": "seed-decision-thread-001",
+  "scenario_name": "Vendor Selection Decision Thread — Cloud Infrastructure",
+  "description": "Decision thread for cloud infrastructure vendor selection. Three vendor proposals evaluated by all three kernels, with orchestrator assembling the decision bundle.",
+  "matter": {
+    "id": "matter-seed-vendor-selection-001",
+    "title": "Cloud Infrastructure Vendor Selection — 2026",
+    "description": "Selection of primary cloud infrastructure provider for next 3-year term. Three vendors under evaluation: NimbusTech, CloudPeak Solutions, and SkyGrid Services.",
+    "matter_type": "cross-domain",
+    "assigned_kernels": ["business", "law", "accounting"],
+    "priority": "high",
+    "status": "under_review"
+  },
+  "vendor_proposals": [
+    {
+      "vendor": "NimbusTech Inc.",
+      "entity_id": "entity-nimbustech-001",
+      "proposal_summary": "Enterprise cloud platform with global edge network. 3-year commitment at $840K/year with 10% volume discount in years 2-3.",
+      "annual_cost": 840000,
+      "total_3yr_cost": 2352000,
+      "sla_uptime": "99.95%",
+      "data_centers": 12,
+      "migration_support": true,
+      "contract_flexibility": "Annual termination with 6-month notice after Year 1"
+    },
+    {
+      "vendor": "CloudPeak Solutions LLC",
+      "entity_id": "entity-cloudpeak-001",
+      "proposal_summary": "Hybrid cloud solution with on-premise integration. 3-year fixed price at $720K/year. No volume discount but includes dedicated support team.",
+      "annual_cost": 720000,
+      "total_3yr_cost": 2160000,
+      "sla_uptime": "99.99%",
+      "data_centers": 8,
+      "migration_support": true,
+      "contract_flexibility": "Locked 3-year term, early termination penalty of 50% remaining contract value"
+    },
+    {
+      "vendor": "SkyGrid Services Corp.",
+      "entity_id": "entity-skygrid-001",
+      "proposal_summary": "Pay-as-you-go cloud with reserved capacity options. Estimated $680K/year based on current usage, but variable. 1-year initial term with auto-renewal.",
+      "annual_cost": 680000,
+      "total_3yr_cost": 2040000,
+      "sla_uptime": "99.9%",
+      "data_centers": 20,
+      "migration_support": false,
+      "contract_flexibility": "Monthly cancellation after initial 1-year term"
+    }
+  ],
+  "decision_bundle": {
+    "id": "bundle-vendor-selection-001",
+    "matter_id": "matter-seed-vendor-selection-001",
+    "business_assessment": {
+      "kernel": "business",
+      "summary": "CloudPeak offers best SLA and dedicated support, critical for operations. NimbusTech provides good balance of cost and capability. SkyGrid is cheapest but variable cost creates budget uncertainty.",
+      "impact_level": "high",
+      "risks": [
+        {
+          "id": "risk-biz-001",
+          "category": "Operational",
+          "description": "SkyGrid variable pricing could exceed budget in high-usage months",
+          "severity": "high",
+          "likelihood": "possible",
+          "mitigation": "Implement usage monitoring and alerts; negotiate cost caps",
+          "owning_kernel": "business"
+        },
+        {
+          "id": "risk-biz-002",
+          "category": "Vendor Dependency",
+          "description": "CloudPeak 3-year lock-in reduces flexibility to adapt to market changes",
+          "severity": "medium",
+          "likelihood": "possible",
+          "mitigation": "Ensure contract includes technology refresh provisions",
+          "owning_kernel": "business"
+        }
+      ],
+      "recommendations": [
+        "CloudPeak recommended for operational reliability (99.99% SLA)",
+        "NimbusTech as secondary recommendation if contract flexibility is prioritized",
+        "SkyGrid not recommended for primary infrastructure due to cost variability"
+      ],
+      "constraints_evaluated": [],
+      "commercial_impact_narrative": "Cloud infrastructure is mission-critical. Downtime costs estimated at $15K/hour. The 0.04% SLA difference between CloudPeak (99.99%) and NimbusTech (99.95%) translates to ~3.5 additional hours of potential downtime annually.",
+      "strategic_alignment": "aligned",
+      "stakeholder_impacts": ["Engineering team prefers NimbusTech API ecosystem", "Operations favors CloudPeak reliability", "Finance prefers SkyGrid cost structure"]
+    },
+    "legal_assessment": {
+      "kernel": "law",
+      "summary": "CloudPeak early termination penalty is aggressive (50% remaining value). NimbusTech termination clause is reasonable. SkyGrid offers most flexibility but weakest SLA enforcement.",
+      "impact_level": "medium",
+      "risks": [
+        {
+          "id": "risk-law-001",
+          "category": "Contractual",
+          "description": "CloudPeak early termination penalty could cost up to $1.08M if exiting after Year 1",
+          "severity": "high",
+          "likelihood": "unlikely",
+          "mitigation": "Negotiate reduced termination penalty or phased reduction schedule",
+          "owning_kernel": "law"
+        },
+        {
+          "id": "risk-law-002",
+          "category": "Data Privacy",
+          "description": "NimbusTech data centers in 4 international jurisdictions — GDPR and cross-border data transfer compliance required",
+          "severity": "medium",
+          "likelihood": "likely",
+          "mitigation": "Require Standard Contractual Clauses and Data Processing Agreement",
+          "owning_kernel": "law"
+        }
+      ],
+      "recommendations": [
+        "Negotiate CloudPeak termination penalty down to 25% or add performance-based exit clauses",
+        "Require DPA and SCCs from NimbusTech for international data handling",
+        "All vendors: ensure indemnification for data breaches with minimum $5M cap"
+      ],
+      "constraints_evaluated": [],
+      "regulatory_implications": ["GDPR compliance for NimbusTech international data centers", "SOC 2 Type II certification required for all vendors"],
+      "compliance_status": "at_risk",
+      "jurisdictional_considerations": ["Delaware (primary)", "EU (NimbusTech data centers)", "California (CCPA)"],
+      "precedent_references": []
+    },
+    "accounting_assessment": {
+      "kernel": "accounting",
+      "summary": "SkyGrid has lowest nominal cost but variable structure complicates budgeting and reporting. CloudPeak fixed pricing simplifies financial planning. NimbusTech volume discount structure requires accrual adjustments.",
+      "impact_level": "high",
+      "risks": [
+        {
+          "id": "risk-acct-001",
+          "category": "Budget Variance",
+          "description": "SkyGrid variable costs could create 15-25% quarterly budget variance",
+          "severity": "medium",
+          "likelihood": "likely",
+          "mitigation": "Establish usage reserves; monthly variance reporting",
+          "owning_kernel": "accounting"
+        }
+      ],
+      "recommendations": [
+        "CloudPeak preferred for budget predictability and simplified accrual treatment",
+        "NimbusTech volume discount requires deferred expense recognition in Year 1",
+        "SkyGrid: establish $100K quarterly contingency reserve for usage spikes"
+      ],
+      "constraints_evaluated": [],
+      "financial_impact_amount": 2160000,
+      "financial_impact_currency": "USD",
+      "tax_implications": ["Cloud services payments deductible as operating expense", "NimbusTech prepayment option could create timing difference for tax purposes"],
+      "reporting_period_impact": ["Multi-year commitment requires ASC 842 lease assessment for all three proposals"],
+      "classification_guidance": "Operating expense classification appropriate for all three proposals under current accounting standards"
+    },
+    "combined_recommendation": "CloudPeak Solutions recommended as primary vendor. While not the lowest cost option, it offers the best combination of SLA reliability (99.99%), budget predictability (fixed pricing), and dedicated support. Key negotiation priorities: (1) reduce early termination penalty to 25%, (2) add performance-based exit clauses, (3) include technology refresh provisions. NimbusTech recommended as fallback if termination flexibility is non-negotiable.",
+    "open_risks": [],
+    "unresolved_constraints": [],
+    "follow_up_actions": [
+      {
+        "id": "fua-vs-001",
+        "title": "Negotiate CloudPeak termination penalty",
+        "description": "Reduce from 50% to 25% of remaining contract value with performance-based exit clauses",
+        "assigned_kernel": "law",
+        "due_date": "2026-04-20",
+        "status": "pending",
+        "priority": "high"
+      },
+      {
+        "id": "fua-vs-002",
+        "title": "ASC 842 lease assessment",
+        "description": "Evaluate whether CloudPeak 3-year commitment triggers right-of-use asset recognition",
+        "assigned_kernel": "accounting",
+        "due_date": "2026-04-25",
+        "status": "pending",
+        "priority": "medium"
+      },
+      {
+        "id": "fua-vs-003",
+        "title": "Migration planning",
+        "description": "Develop migration timeline and resource plan for CloudPeak onboarding",
+        "assigned_kernel": "business",
+        "due_date": "2026-05-01",
+        "status": "pending",
+        "priority": "medium"
+      }
+    ],
+    "source_kernel_receipts": [],
+    "advisory_support_receipts": [],
+    "generated_at": "2026-04-05T10:00:00Z",
+    "generated_by_surface": "commercial-control-tower",
+    "status": "under_review",
+    "version": 1
+  }
+}

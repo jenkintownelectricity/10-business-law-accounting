@@ -1,0 +1,114 @@
+{
+  "scenario_id": "seed-listening-session-review-001",
+  "scenario_name": "Listening Session Review Packet — BuildRight Contract Negotiation",
+  "description": "An Iron Ear listening session captures a contract negotiation call. The session is packaged into a review packet with extracted observations, action items, and kernel routing hints. All outputs are UNTRUSTED until typed by sovereign kernels.",
+  "source_layer": "Voice-Assist-Layer",
+  "sovereignty": "NON_SOVEREIGN",
+  "trust_status": "UNTRUSTED_UNTIL_TYPED",
+  "listening_session": {
+    "session_id": "iron-ear-sess-001",
+    "practitioner_id": "pract-smitchell-001",
+    "started_at": "2026-04-04T10:00:00Z",
+    "ended_at": "2026-04-04T10:48:22Z",
+    "mode": "listening",
+    "audio_quality": "phone_call",
+    "language": "en-US",
+    "participants": [
+      { "speaker_id": "spk-int-001", "name": "Sarah Mitchell", "affiliation": "internal", "role": "lead_counsel" },
+      { "speaker_id": "spk-ext-001", "name": "Tom Graves", "affiliation": "external", "role": "counterparty_counsel" }
+    ],
+    "total_segments": 47,
+    "total_words": 3842
+  },
+  "review_packet": {
+    "packet_id": "review-pkt-iron-ear-001",
+    "trust_status": "UNTRUSTED",
+    "requires_kernel_typing": true,
+    "generated_at": "2026-04-04T10:49:00Z",
+    "summary": "Negotiation call regarding amendment to BuildRight consulting contract. Key topics: rate increase request, indemnification cap, and insurance requirements. Counterparty counsel pushed for 8% rate increase; internal counsel countered with 4% tied to CPI.",
+    "key_topics": [
+      {
+        "topic": "Rate increase negotiation",
+        "relevant_segments": [3, 4, 5, 12, 13, 14],
+        "domain": "accounting",
+        "summary": "BuildRight requesting 8% rate increase from $165/hr to $178/hr. Internal position is 4% CPI-linked increase to $172/hr. Gap of $6/hr across estimated 2000 hours annually = $12,000 annual impact."
+      },
+      {
+        "topic": "Indemnification cap revision",
+        "relevant_segments": [18, 19, 20, 21],
+        "domain": "law",
+        "summary": "Counterparty wants to reduce indemnification cap from 24 months to 12 months of fees. Internal position is to maintain 24 months given data processing risk profile."
+      },
+      {
+        "topic": "Professional liability insurance requirement",
+        "relevant_segments": [30, 31, 32],
+        "domain": "law",
+        "summary": "Discussion of increasing minimum professional liability insurance from $2M to $5M. Counterparty indicated this would increase their overhead, may request fee offset."
+      }
+    ],
+    "extracted_action_items": [
+      {
+        "action": "Model financial impact of 4% vs 8% rate increase across projected hours for next 3 years",
+        "assignee_inferred": "pract-rfernandez-001",
+        "target_kernel": "accounting",
+        "priority": "high",
+        "confidence": 0.88
+      },
+      {
+        "action": "Draft revised indemnification clause maintaining 24-month cap with narrowed scope as compromise",
+        "assignee_inferred": "pract-smitchell-001",
+        "target_kernel": "law",
+        "priority": "high",
+        "confidence": 0.92
+      },
+      {
+        "action": "Research market standard for professional liability insurance in construction consulting",
+        "assignee_inferred": "pract-smitchell-001",
+        "target_kernel": "law",
+        "priority": "medium",
+        "confidence": 0.85
+      },
+      {
+        "action": "Schedule follow-up call with BuildRight counsel for next week",
+        "assignee_inferred": "pract-jchen-001",
+        "target_kernel": "commercial",
+        "priority": "medium",
+        "confidence": 0.94
+      }
+    ],
+    "detected_commitments": [
+      {
+        "speaker": "spk-int-001",
+        "commitment": "Will send revised indemnification language by end of week",
+        "segment": 21,
+        "deadline_inferred": "2026-04-10",
+        "confidence": 0.87
+      },
+      {
+        "speaker": "spk-ext-001",
+        "commitment": "Will provide updated insurance certificate if $5M requirement is agreed",
+        "segment": 32,
+        "deadline_inferred": null,
+        "confidence": 0.80
+      }
+    ],
+    "risk_flags": [
+      {
+        "flag": "Counterparty may bundle rate increase with indemnification cap reduction as package deal",
+        "severity": "medium",
+        "segments": [25, 26],
+        "confidence": 0.72
+      }
+    ]
+  },
+  "expected_kernel_routing": {
+    "kernels_involved": ["law", "accounting", "commercial"],
+    "reason": "Negotiation covers contract terms (law), financial impact modeling (accounting), and scheduling/matter management (commercial)"
+  },
+  "validation_requirements": [
+    "All extracted action items must be reviewed and confirmed by practitioner before kernel typing",
+    "Detected commitments must be verified against actual session audio before creating obligations",
+    "Financial figures must be validated by accounting kernel before use in any analysis",
+    "Risk flags are advisory only and must not be treated as assessed risks until kernel-typed"
+  ]
+}

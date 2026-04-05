@@ -1,0 +1,21 @@
+{
+  "name": "10-business-law-accounting",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Business Law Accounting Domain OS — Commercial Control Tower",
+  "workspaces": [
+    "2-Engines-Tools-Datasets/*",
+    "3-Applications-Control-Towers/*",
+    "4-Workers-Relays-Assistants/*"
+  ],
+  "scripts": {
+    "build": "turbo run build",
+    "test": "turbo run test",
+    "lint": "turbo run lint",
+    "typecheck": "turbo run typecheck"
+  },
+  "devDependencies": {
+    "turbo": "^2.0.0",
+    "typescript": "^5.4.0"
+  }
+}

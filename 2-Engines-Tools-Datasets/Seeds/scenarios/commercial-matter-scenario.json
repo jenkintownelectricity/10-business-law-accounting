@@ -1,0 +1,50 @@
+{
+  "scenario_id": "seed-commercial-matter-001",
+  "title": "Cross-Domain Acquisition Assessment",
+  "description": "Full cross-domain assessment for proposed acquisition of DataPipe Analytics. Requires business valuation, legal due diligence, and financial impact analysis.",
+  "domains": ["business", "law", "accounting"],
+  "priority": "critical",
+  "matter": {
+    "id": "matter-acquisition-001",
+    "title": "DataPipe Analytics Acquisition Assessment",
+    "description": "Proposed acquisition of DataPipe Analytics Inc. Pre-revenue data analytics startup with 12 employees, 3 patents, and $2.1M in venture funding. Purchase price: $8.5M.",
+    "matter_type": "acquisition",
+    "entity_id": "entity-acme-corp",
+    "risk_score": 0.65,
+    "status": "in_review"
+  },
+  "business_context": {
+    "acquiring_entity": { "id": "entity-acme-corp", "name": "Acme Corporation", "entity_type": "corporation" },
+    "target_entity": { "id": "entity-datapipe", "name": "DataPipe Analytics Inc.", "entity_type": "corporation" },
+    "acquisition_type": "asset_purchase",
+    "proposed_price": 8500000,
+    "currency": "USD",
+    "strategic_rationale": "Expand data analytics capabilities and acquire patent portfolio"
+  },
+  "legal_context": {
+    "contracts_to_review": [
+      { "id": "contract-dp-ip-001", "title": "IP Assignment Agreement", "status": "draft" },
+      { "id": "contract-dp-emp-001", "title": "Key Employee Retention Agreements", "status": "draft" },
+      { "id": "contract-dp-purchase-001", "title": "Asset Purchase Agreement", "status": "draft" }
+    ],
+    "compliance_areas": ["antitrust", "ip_transfer", "employment_law"],
+    "key_deadlines": [
+      { "description": "LOI expiration", "date": "2026-05-15" },
+      { "description": "Due diligence completion", "date": "2026-06-30" },
+      { "description": "Regulatory filing deadline", "date": "2026-07-15" }
+    ]
+  },
+  "financial_context": {
+    "purchase_price": 8500000,
+    "estimated_integration_costs": 1200000,
+    "target_revenue_current": 0,
+    "target_burn_rate_monthly": 175000,
+    "target_assets": 3200000,
+    "target_liabilities": 450000
+  },
+  "expected_routing": {
+    "primary": "business",
+    "all_kernels_required": true,
+    "constraints_to_evaluate": ["BUS-001", "BUS-004", "LAW-001", "LAW-005", "ACCT-001", "ACCT-004"]
+  }
+}

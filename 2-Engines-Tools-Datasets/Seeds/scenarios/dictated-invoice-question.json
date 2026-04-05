@@ -1,0 +1,46 @@
+{
+  "scenario_id": "seed-dictated-invoice-question-001",
+  "scenario_name": "Dictated Invoice Question — Ambiguous Terms",
+  "description": "Spoken question about invoice treatment with ambiguous terms that need language normalization. Demonstrates cross-domain ambiguity between accounting and legal interpretations.",
+  "type": "spoken_note_envelope",
+  "session_id": "voice-session-inv-q-001",
+  "raw_transcript": "I have a question about the Hartfield invoice. They're billing us for the remediation work but I'm not sure if we should book this as an expense or if it should be capitalized since it arguably improved the asset. Also, there's a retention amount that we're holding back pending the warranty period. Do we need to account for that as a contingent liability or just a deferred payment? And from the legal side, the retention clause in the contract says we can withhold 10% until substantial completion is certified, but Hartfield is disputing whether the punch list items affect substantial completion.",
+  "confidence": 0.91,
+  "source_type": "dictation",
+  "review_status": "pending",
+  "language_normalization_needed": true,
+  "ambiguous_terms": [
+    {
+      "term": "remediation work",
+      "accounting_interpretation": "Could be repair expense (P&L) or capital improvement (balance sheet)",
+      "legal_interpretation": "Could relate to contractual warranty obligations or defect cure provisions",
+      "business_interpretation": "Operational assessment of work quality and completion"
+    },
+    {
+      "term": "retention amount",
+      "accounting_interpretation": "Deferred payment liability or contingent liability depending on contractual conditions",
+      "legal_interpretation": "Contractual right to withhold payment, subject to substantial completion certification"
+    },
+    {
+      "term": "substantial completion",
+      "accounting_interpretation": "Trigger for revenue/expense recognition timing",
+      "legal_interpretation": "Contractual milestone with specific legal definition, often disputed"
+    },
+    {
+      "term": "book this",
+      "accounting_interpretation": "Record in the general ledger / financial statements",
+      "business_interpretation": "Could colloquially mean 'schedule' or 'record'"
+    }
+  ],
+  "routed_kernels": ["accounting", "law"],
+  "extracted_candidates": {
+    "financial_items": ["remediation cost classification", "retention amount treatment", "contingent liability assessment"],
+    "legal_items": ["retention clause interpretation", "substantial completion dispute", "punch list impact on completion"],
+    "business_items": ["Hartfield vendor relationship management"]
+  },
+  "expected_normalization": {
+    "remediation_work": "Requires practitioner determination: capitalize if the work extends asset useful life or increases value; expense if it restores to prior condition",
+    "retention_amount": "10% contractual holdback per retention clause — accounting treatment depends on probability of payment obligation",
+    "substantial_completion": "Legal term of art — requires contract-specific analysis per the agreement's definition"
+  }
+}

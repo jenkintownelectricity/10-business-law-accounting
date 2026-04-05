@@ -1,0 +1,44 @@
+{
+  "scenario_id": "seed-invoice-processing-001",
+  "title": "Vendor Invoice Processing",
+  "description": "Processing of a quarterly infrastructure invoice from CloudHost Services for data center hosting and bandwidth.",
+  "domains": ["accounting", "business"],
+  "priority": "medium",
+  "matter": {
+    "id": "matter-invoice-001",
+    "title": "CloudHost Q1 2026 Infrastructure Invoice",
+    "description": "Quarterly invoice for data center hosting, bandwidth allocation, and managed services. Includes new GPU cluster charges.",
+    "matter_type": "invoice_processing",
+    "entity_id": "entity-acme-corp",
+    "status": "pending_review"
+  },
+  "invoice": {
+    "id": "inv-cloudhost-q1-2026",
+    "invoice_number": "CH-2026-Q1-4521",
+    "vendor_id": "vendor-cloudhost",
+    "vendor_name": "CloudHost Services LLC",
+    "amount": 87500.00,
+    "currency": "USD",
+    "line_items": [
+      { "description": "Dedicated server hosting (3 racks)", "quantity": 3, "unit_price": 15000, "amount": 45000, "account_code": "6100", "tax_code": "ST-001" },
+      { "description": "Bandwidth allocation (10Gbps)", "quantity": 1, "unit_price": 12500, "amount": 12500, "account_code": "6100", "tax_code": "ST-001" },
+      { "description": "Managed services tier 2", "quantity": 1, "unit_price": 8000, "amount": 8000, "account_code": "6200", "tax_code": "ST-001" },
+      { "description": "GPU cluster (new)", "quantity": 1, "unit_price": 22000, "amount": 22000, "account_code": "6300", "tax_code": "ST-001" }
+    ],
+    "issued_date": "2026-04-01",
+    "due_date": "2026-04-30",
+    "paid": false,
+    "status": "received"
+  },
+  "vendor": {
+    "id": "vendor-cloudhost",
+    "name": "CloudHost Services LLC",
+    "verified": true,
+    "tax_id": "87-6543210"
+  },
+  "expected_routing": {
+    "primary": "accounting",
+    "secondary": "business",
+    "constraints_to_evaluate": ["ACCT-001", "ACCT-002", "BUS-003"]
+  }
+}

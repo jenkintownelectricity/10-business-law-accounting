@@ -1,0 +1,5 @@
+packages:
+  - "2-Engines-Tools-Datasets/*"
+  - "3-Applications-Control-Towers/*"
+  - "4-Workers-Relays-Assistants/*"
+  - "1-Governance-Registry-Runtime/*"
