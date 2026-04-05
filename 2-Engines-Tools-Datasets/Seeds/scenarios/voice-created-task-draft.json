@@ -1,0 +1,45 @@
+{
+  "scenario_id": "seed-voice-task-001",
+  "title": "Voice-Created Follow-Up Task",
+  "description": "A task draft created via spoken command during a voice session. Advisory only — requires confirmation before execution.",
+  "domains": ["voice", "business"],
+  "priority": "medium",
+  "voice_session": {
+    "session_id": "vs-manager-001-1712500000",
+    "user_id": "manager-001",
+    "mode": "command",
+    "status": "active"
+  },
+  "spoken_command": {
+    "candidate_id": "cmd-vs-manager-001-1712500001",
+    "session_id": "vs-manager-001-1712500000",
+    "raw_text": "Create a new task for the procurement team to validate CloudHost vendor credentials before the invoice is approved",
+    "interpreted_action": "create",
+    "confidence": 0.85,
+    "parameters": {
+      "object_type": "task",
+      "target": "the procurement team to validate CloudHost vendor credentials before the invoice is approved"
+    },
+    "requires_confirmation": true,
+    "advisory_only": true,
+    "parsed_at": "2026-04-04T09:30:00Z"
+  },
+  "task_draft": {
+    "title": "Validate CloudHost vendor credentials",
+    "description": "Validate CloudHost Services LLC vendor credentials including tax ID verification, insurance documentation, and compliance certifications before approving Q1 2026 infrastructure invoice (CH-2026-Q1-4521).",
+    "assigned_to": "procurement_team",
+    "related_entity_id": "vendor-cloudhost",
+    "related_matter_id": "matter-invoice-001",
+    "due_date": "2026-04-25",
+    "priority": "medium",
+    "status": "draft",
+    "source": "voice_command",
+    "requires_confirmation": true
+  },
+  "expected_routing": {
+    "primary": "business",
+    "advisory_source": "voice",
+    "routed_to": "review_queue",
+    "constraints_to_evaluate": ["BUS-003"]
+  }
+}

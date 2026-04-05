@@ -1,0 +1,186 @@
+{
+  "scenario_id": "seed-listening-session-review-001",
+  "scenario_name": "Complete Listening Session Review Packet",
+  "description": "Complete review packet from a listening session capturing a project status meeting. Contains extracted items ready for practitioner review including obligation candidates, deadline candidates, and routing hints.",
+  "listening_session": {
+    "id": "listen-session-review-001",
+    "session_id": "listen-session-review-001",
+    "title": "Riverside Commercial Development — Weekly Status Meeting",
+    "description": "Weekly project status meeting for the Riverside Commercial Development. Attendees from construction, legal, and finance.",
+    "start_time": "2026-04-04T09:00:00Z",
+    "end_time": "2026-04-04T09:52:00Z",
+    "status": "completed",
+    "participant_count": 5,
+    "matter_id": "matter-riverside-project-001",
+    "trust_level": "UNTRUSTED"
+  },
+  "transcript_segments": [
+    {
+      "speaker": "Tom (Project Manager)",
+      "text": "The concrete pour for Building B is scheduled for next Wednesday. We need the structural engineer sign-off by Monday end of day or we slip the schedule.",
+      "timestamp": "00:03:22"
+    },
+    {
+      "speaker": "Lisa (Finance)",
+      "text": "BuildRight's March invoice came in at $21,550. That's within budget but we only have $187K remaining on that consulting contract. At this rate, we'll exhaust the budget by August.",
+      "timestamp": "00:08:15"
+    },
+    {
+      "speaker": "Tom (Project Manager)",
+      "text": "We need to renegotiate that contract or get a budget increase before the current allocation runs out. Can we get that on the agenda for next month's board meeting?",
+      "timestamp": "00:09:30"
+    },
+    {
+      "speaker": "Rachel (Legal)",
+      "text": "On the permitting front, the environmental impact assessment is due to the county by April 30th. If we miss that, the conditional use permit expires and we'd need to reapply. That would cost us three months minimum.",
+      "timestamp": "00:15:45"
+    },
+    {
+      "speaker": "Lisa (Finance)",
+      "text": "The Hartfield subcontractor is disputing our retention holdback. They say the punch list items don't affect substantial completion. We need legal to review the retention clause.",
+      "timestamp": "00:22:10"
+    },
+    {
+      "speaker": "Rachel (Legal)",
+      "text": "I'll review the retention clause this week. We should also check if our insurance covers the delay claims that Hartfield is threatening.",
+      "timestamp": "00:23:30"
+    },
+    {
+      "speaker": "Mark (Construction Superintendent)",
+      "text": "The city inspector is coming next Thursday for the electrical rough-in inspection on Building A. We must have all junction boxes accessible and the permit posted on site.",
+      "timestamp": "00:31:00"
+    },
+    {
+      "speaker": "Tom (Project Manager)",
+      "text": "Everyone needs to submit their updated cost projections by end of this week so Lisa can run the numbers for the quarterly report. The board presentation is April 20th.",
+      "timestamp": "00:42:15"
+    }
+  ],
+  "review_packet": {
+    "obligation_candidates": [
+      {
+        "id": "obl-cand-001",
+        "extracted_text": "Need structural engineer sign-off by Monday end of day for Building B concrete pour",
+        "suggested_type": "performance",
+        "suggested_due_date": "2026-04-06T17:00:00Z",
+        "confidence": 0.88,
+        "routing_hint": "business",
+        "review_status": "pending",
+        "criticality": "high"
+      },
+      {
+        "id": "obl-cand-002",
+        "extracted_text": "Environmental impact assessment due to the county by April 30th — conditional use permit at risk",
+        "suggested_type": "regulatory_filing",
+        "suggested_due_date": "2026-04-30",
+        "confidence": 0.95,
+        "routing_hint": "law",
+        "review_status": "pending",
+        "criticality": "critical"
+      },
+      {
+        "id": "obl-cand-003",
+        "extracted_text": "Legal to review retention clause regarding Hartfield subcontractor dispute",
+        "suggested_type": "compliance",
+        "suggested_due_date": "2026-04-11",
+        "confidence": 0.82,
+        "routing_hint": "law",
+        "review_status": "pending",
+        "criticality": "high"
+      },
+      {
+        "id": "obl-cand-004",
+        "extracted_text": "All junction boxes accessible and permit posted for electrical inspection next Thursday",
+        "suggested_type": "compliance",
+        "suggested_due_date": "2026-04-09",
+        "confidence": 0.90,
+        "routing_hint": "business",
+        "review_status": "pending",
+        "criticality": "high"
+      },
+      {
+        "id": "obl-cand-005",
+        "extracted_text": "Submit updated cost projections by end of week for quarterly report",
+        "suggested_type": "reporting",
+        "suggested_due_date": "2026-04-10",
+        "confidence": 0.85,
+        "routing_hint": "accounting",
+        "review_status": "pending",
+        "criticality": "medium"
+      }
+    ],
+    "deadline_candidates": [
+      {
+        "id": "dl-cand-001",
+        "extracted_text": "Structural engineer sign-off — Monday EOD",
+        "suggested_date": "2026-04-06",
+        "criticality": "operational",
+        "consequence": "Concrete pour for Building B slips schedule",
+        "confidence": 0.88,
+        "review_status": "pending"
+      },
+      {
+        "id": "dl-cand-002",
+        "extracted_text": "Environmental impact assessment — April 30",
+        "suggested_date": "2026-04-30",
+        "criticality": "statutory",
+        "consequence": "Conditional use permit expires; 3-month reapplication process",
+        "confidence": 0.95,
+        "review_status": "pending"
+      },
+      {
+        "id": "dl-cand-003",
+        "extracted_text": "Electrical rough-in inspection — next Thursday",
+        "suggested_date": "2026-04-09",
+        "criticality": "operational",
+        "consequence": "Schedule delay if inspection not passed",
+        "confidence": 0.90,
+        "review_status": "pending"
+      },
+      {
+        "id": "dl-cand-004",
+        "extracted_text": "Cost projections due — end of this week",
+        "suggested_date": "2026-04-10",
+        "criticality": "operational",
+        "consequence": "Quarterly report and board presentation delayed",
+        "confidence": 0.85,
+        "review_status": "pending"
+      },
+      {
+        "id": "dl-cand-005",
+        "extracted_text": "Board presentation — April 20",
+        "suggested_date": "2026-04-20",
+        "criticality": "operational",
+        "consequence": "Board requires updated financial projections",
+        "confidence": 0.92,
+        "review_status": "pending"
+      }
+    ],
+    "routing_hints": {
+      "law": {
+        "relevance": 0.80,
+        "items": ["Environmental impact assessment filing", "Retention clause dispute review", "Insurance coverage for delay claims"],
+        "key_terms": ["conditional use permit", "retention clause", "substantial completion", "insurance coverage"]
+      },
+      "accounting": {
+        "relevance": 0.70,
+        "items": ["Budget tracking for BuildRight contract", "Cost projection compilation", "Quarterly financial report preparation", "Retention holdback accounting treatment"],
+        "key_terms": ["budget remaining", "cost projections", "quarterly report", "retention holdback"]
+      },
+      "business": {
+        "relevance": 0.75,
+        "items": ["Project schedule management", "Contract renegotiation or budget increase", "Inspection readiness", "Board presentation preparation"],
+        "key_terms": ["schedule slip", "budget increase", "board meeting", "inspection"]
+      }
+    },
+    "advisory_summary": {
+      "total_obligation_candidates": 5,
+      "total_deadline_candidates": 5,
+      "highest_criticality": "critical",
+      "critical_items": ["Environmental impact assessment due April 30 — permit at risk"],
+      "cross_domain_items": 3,
+      "review_required": true,
+      "all_items_advisory_only": true
+    }
+  }
+}

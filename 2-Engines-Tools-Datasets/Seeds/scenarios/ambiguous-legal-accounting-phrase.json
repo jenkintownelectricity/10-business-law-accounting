@@ -1,0 +1,92 @@
+{
+  "scenario_id": "seed-ambiguous-phrase-001",
+  "scenario_name": "Ambiguous Cross-Domain Phrase — Contingent Liability from Pending Litigation",
+  "description": "Example of ambiguous phrasing that spans business, law, and accounting domains. The phrase 'We need to account for the contingent liability from the pending litigation' needs multi-kernel routing.",
+  "input_phrase": "We need to account for the contingent liability from the pending litigation",
+  "context": "Spoken during a quarterly review meeting while discussing the Consolidated Financial Statements for Q1 2026. The company has an active lawsuit from a former vendor claiming breach of contract for $3.2M.",
+  "language_normalization": {
+    "ambiguous_terms": [
+      {
+        "term": "account for",
+        "interpretations": [
+          {
+            "domain": "accounting",
+            "interpretation": "Record in the financial statements per ASC 450 (Contingencies)",
+            "confidence": 0.75,
+            "action": "Assess probability and estimability to determine if accrual, disclosure, or no action is required"
+          },
+          {
+            "domain": "business",
+            "interpretation": "Consider and plan for the business impact",
+            "confidence": 0.20,
+            "action": "Factor into strategic planning and stakeholder communications"
+          }
+        ]
+      },
+      {
+        "term": "contingent liability",
+        "interpretations": [
+          {
+            "domain": "accounting",
+            "interpretation": "Potential obligation under ASC 450 — requires probability assessment (probable, reasonably possible, or remote)",
+            "confidence": 0.80,
+            "action": "If probable and estimable: accrue. If reasonably possible: disclose in notes. If remote: no action."
+          },
+          {
+            "domain": "law",
+            "interpretation": "Potential legal exposure from the pending litigation outcome",
+            "confidence": 0.70,
+            "action": "Assess litigation risk, review case status with counsel, evaluate settlement options"
+          }
+        ]
+      },
+      {
+        "term": "pending litigation",
+        "interpretations": [
+          {
+            "domain": "law",
+            "interpretation": "Active lawsuit in legal proceedings",
+            "confidence": 0.95,
+            "action": "Review case status, evaluate merits, assess likely outcome"
+          },
+          {
+            "domain": "accounting",
+            "interpretation": "Source of potential financial exposure requiring assessment for financial reporting",
+            "confidence": 0.60,
+            "action": "Obtain litigation status from counsel to inform financial statement treatment"
+          }
+        ]
+      }
+    ],
+    "disambiguation_result": {
+      "primary_domain": "accounting",
+      "primary_confidence": 0.75,
+      "reasoning": "The phrase 'account for' in the context of quarterly financial review most likely refers to financial statement treatment. However, the litigation component requires legal kernel input for probability assessment.",
+      "requires_cross_domain": true,
+      "recommended_routing": ["accounting", "law"],
+      "practitioner_confirmation_required": true
+    }
+  },
+  "routing_hints": {
+    "law": {
+      "relevance": 0.85,
+      "reason": "Pending litigation requires legal assessment of case merits, likelihood of adverse outcome, and potential settlement range",
+      "key_terms": ["pending litigation", "contingent liability"]
+    },
+    "accounting": {
+      "relevance": 0.90,
+      "reason": "Contingent liability assessment per ASC 450 requires determination of probability and estimability for financial statement treatment",
+      "key_terms": ["account for", "contingent liability"]
+    },
+    "business": {
+      "relevance": 0.35,
+      "reason": "Potential $3.2M exposure may impact business planning and stakeholder communications",
+      "key_terms": ["contingent liability"]
+    }
+  },
+  "expected_actions": {
+    "law_kernel": "Provide assessment of litigation probability (probable/reasonably possible/remote) and estimated range of loss",
+    "accounting_kernel": "Based on legal assessment, determine ASC 450 treatment: accrue liability, disclose in notes, or document assessment that no action is needed",
+    "business_kernel": "If material, flag for stakeholder communication planning and potential impact on business decisions"
+  }
+}
