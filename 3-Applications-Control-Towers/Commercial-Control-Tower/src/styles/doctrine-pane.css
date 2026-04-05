@@ -1,0 +1,194 @@
+/**
+ * Doctrine Pane Styles
+ * Dark background, frozen badge, breadcrumb navigation,
+ * monospace content area, read-only visual indicators.
+ */
+
+.doctrine-pane {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-surface-deep, #0d1117);
+  border: 1px solid var(--color-border-subtle, #21262d);
+  border-radius: 6px;
+  color: var(--color-text-primary, #c9d1d9);
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Header */
+.doctrine-header {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--color-border-subtle, #21262d);
+  background: var(--color-surface-raised, #161b22);
+}
+
+.doctrine-title-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.doctrine-title {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0;
+  color: var(--color-text-primary, #c9d1d9);
+}
+
+/* Frozen badge */
+.badge--frozen {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 6px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  background: var(--color-frozen-bg, #1c2d4a);
+  color: var(--color-frozen-text, #58a6ff);
+  border: 1px solid var(--color-frozen-border, #264f78);
+  border-radius: 3px;
+}
+
+/* Read-only badge */
+.badge--readonly {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 6px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  background: var(--color-readonly-bg, #2d1f1f);
+  color: var(--color-readonly-text, #f0883e);
+  border: 1px solid var(--color-readonly-border, #5c3d2e);
+  border-radius: 3px;
+}
+
+/* Breadcrumb */
+.doctrine-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  margin-top: 6px;
+  font-size: 11px;
+  color: var(--color-text-muted, #8b949e);
+}
+
+.doctrine-crumb {
+  display: inline-flex;
+  align-items: center;
+}
+
+.doctrine-crumb-sep {
+  margin: 0 4px;
+  opacity: 0.5;
+}
+
+/* Navigation sidebar */
+.doctrine-nav {
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+  gap: 2px;
+  border-bottom: 1px solid var(--color-border-subtle, #21262d);
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.doctrine-nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  padding: 6px 10px;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: left;
+  color: var(--color-text-secondary, #8b949e);
+  transition: background 120ms ease, border-color 120ms ease;
+}
+
+.doctrine-nav-item:hover {
+  background: var(--color-surface-hover, #1c2028);
+  border-color: var(--color-border-subtle, #21262d);
+}
+
+.doctrine-nav-active {
+  background: var(--color-surface-selected, #1c2d4a);
+  border-color: var(--color-frozen-border, #264f78);
+  color: var(--color-text-primary, #c9d1d9);
+}
+
+.doctrine-nav-category {
+  font-size: 9px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  opacity: 0.6;
+}
+
+.doctrine-nav-label {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.doctrine-nav-version {
+  font-size: 10px;
+  font-family: var(--font-mono, 'SF Mono', 'Fira Code', monospace);
+  opacity: 0.5;
+}
+
+/* Content area */
+.doctrine-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.doctrine-meta {
+  display: flex;
+  gap: 16px;
+  padding: 8px 16px;
+  font-size: 10px;
+  color: var(--color-text-muted, #8b949e);
+  border-bottom: 1px solid var(--color-border-subtle, #21262d);
+}
+
+.doctrine-meta-item {
+  font-family: var(--font-mono, 'SF Mono', 'Fira Code', monospace);
+}
+
+.doctrine-body {
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto;
+  position: relative;
+}
+
+.doctrine-body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  border: 2px dashed var(--color-frozen-border, #264f78);
+  border-radius: 4px;
+  opacity: 0.3;
+}
+
+.doctrine-text {
+  font-family: var(--font-mono, 'SF Mono', 'Fira Code', monospace);
+  font-size: 12px;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  word-break: break-word;
+  margin: 0;
+  color: var(--color-text-primary, #c9d1d9);
+  user-select: text;
+}
