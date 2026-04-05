@@ -1,0 +1,149 @@
+/**
+ * Badge System Styles
+ *
+ * Compact, terminal-grade, high contrast badges.
+ * Mandatory order layout in badge strips.
+ */
+
+/* ── Base Badge ── */
+
+.cct-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: 1px var(--space-2);
+  font-family: var(--font-mono);
+  font-size: var(--font-size-xs);
+  line-height: 1.2;
+  border-width: 1px;
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+  user-select: none;
+  vertical-align: middle;
+  letter-spacing: 0.02em;
+}
+
+.cct-badge__label {
+  font-weight: 500;
+}
+
+.cct-badge__value {
+  opacity: 0.8;
+}
+
+.cct-badge__icon {
+  font-size: 0.5rem;
+  line-height: 1;
+}
+
+/* ── Badge Strip (Mandatory Order) ── */
+
+.cct-badge-strip {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding: var(--space-1) 0;
+  scrollbar-width: none;
+}
+
+.cct-badge-strip::-webkit-scrollbar {
+  display: none;
+}
+
+/* ── Confidence Badge ── */
+
+.cct-badge--confidence {
+  min-width: 56px;
+}
+
+.cct-badge--high {
+  border-color: var(--color-accent-green);
+  color: var(--color-accent-green);
+  background-color: var(--color-accent-green-muted);
+}
+
+.cct-badge--medium {
+  border-color: var(--color-accent-amber);
+  color: var(--color-accent-amber);
+  background-color: var(--color-accent-amber-muted);
+}
+
+.cct-badge--low {
+  border-color: var(--color-accent-red);
+  color: var(--color-accent-red);
+  background-color: var(--color-accent-red-muted);
+}
+
+/* ── Route Badge ── */
+
+.cct-badge--route {
+  min-width: 48px;
+}
+
+/* ── Source Badge ── */
+
+.cct-badge--source {
+  min-width: 60px;
+}
+
+/* ── Trust State Badge ── */
+
+.cct-badge--trust-state {
+  min-width: 72px;
+}
+
+.cct-badge--trust-unpromoted {
+  border-style: dashed;
+}
+
+.cct-badge--trust-promoted {
+  border-style: solid;
+}
+
+.cct-badge--trust-rejected {
+  border-style: solid;
+  text-decoration: line-through;
+}
+
+/* ── Violation Badge ── */
+
+.cct-badge--violation {
+  min-width: 56px;
+  font-weight: 600;
+}
+
+.cct-badge--violation-warning {
+  border-color: var(--color-accent-amber);
+  color: var(--color-accent-amber);
+  background-color: var(--color-accent-amber-muted);
+}
+
+.cct-badge--violation-critical {
+  border-color: var(--color-violation-crimson);
+  color: var(--color-violation-crimson);
+  background-color: var(--color-violation-crimson-muted);
+}
+
+/* ── Focus Badge ── */
+
+.cct-badge--focus {
+  min-width: 32px;
+  text-align: center;
+}
+
+/* ── High Contrast Mode ── */
+
+@media (forced-colors: active) {
+  .cct-badge {
+    border: 1px solid ButtonText;
+    color: ButtonText;
+    background-color: Canvas;
+  }
+
+  .cct-badge--violation-critical {
+    border-color: Mark;
+    color: Mark;
+  }
+}

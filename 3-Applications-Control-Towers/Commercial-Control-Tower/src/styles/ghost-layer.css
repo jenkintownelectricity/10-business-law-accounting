@@ -1,0 +1,117 @@
+/**
+ * Ghost Layer Styles
+ *
+ * Translucent overlays, wireframe outlines, delta highlights.
+ * Ghost layer is read-only -- visual only, no interaction with domain state.
+ */
+
+.cct-ghost-layer {
+  position: absolute;
+  inset: 0;
+  z-index: var(--z-ghost-layer);
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.cct-ghost-layer--visible {
+  opacity: 1;
+}
+
+.cct-ghost-layer--hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* ── Ghost Overlay ── */
+
+.cct-ghost-overlay {
+  position: absolute;
+  background-color: rgba(255, 255, 255, var(--ghost-overlay-opacity));
+  border: var(--ghost-wireframe-width) dashed var(--color-neutral-500);
+  border-radius: var(--radius-md);
+  pointer-events: none;
+  transition: opacity var(--transition-base);
+}
+
+.cct-ghost-overlay--selected {
+  border-color: var(--color-accent-blue);
+  border-style: solid;
+  background-color: rgba(74, 144, 217, 0.06);
+  pointer-events: auto;
+}
+
+.cct-ghost-overlay--violation {
+  border-color: var(--color-violation-crimson);
+  border-style: solid;
+  background-color: var(--color-violation-crimson-muted);
+}
+
+/* ── Delta Highlights ── */
+
+.cct-ghost-delta {
+  position: relative;
+}
+
+.cct-ghost-delta__added {
+  background-color: var(--ghost-delta-highlight);
+  border-left: 2px solid var(--color-accent-green);
+  padding-left: var(--space-2);
+}
+
+.cct-ghost-delta__removed {
+  background-color: rgba(224, 80, 80, 0.1);
+  border-left: 2px solid var(--color-accent-red);
+  padding-left: var(--space-2);
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+.cct-ghost-delta__modified {
+  background-color: rgba(240, 160, 48, 0.1);
+  border-left: 2px solid var(--color-accent-amber);
+  padding-left: var(--space-2);
+}
+
+/* ── Ghost Wireframe ── */
+
+.cct-ghost-wireframe {
+  position: absolute;
+  inset: 0;
+  border: var(--ghost-wireframe-width) dashed var(--color-neutral-600);
+  border-radius: var(--radius-md);
+  pointer-events: none;
+}
+
+.cct-ghost-wireframe--crimson {
+  border-color: var(--color-violation-crimson);
+  border-width: 2px;
+}
+
+.cct-ghost-wireframe--amber {
+  border-color: var(--color-accent-amber);
+}
+
+.cct-ghost-wireframe--green {
+  border-color: var(--color-accent-green);
+  border-style: solid;
+}
+
+/* ── Ghost Badge Header ── */
+
+.cct-ghost-overlay__header {
+  display: flex;
+  align-items: center;
+  padding: var(--space-2) var(--space-3);
+  background-color: rgba(15, 18, 24, 0.85);
+  border-bottom: 1px solid var(--color-neutral-700);
+  pointer-events: auto;
+}
+
+/* ── Reduced Motion ── */
+
+@media (prefers-reduced-motion: reduce) {
+  .cct-ghost-overlay,
+  .cct-ghost-layer {
+    transition: none;
+  }
+}
