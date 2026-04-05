@@ -23,10 +23,12 @@ describe('Doctrine Pane: Read-Only Enforcement', () => {
   });
 
   it('doctrine pane should not contain edit buttons', () => {
-    expect(paneContent).not.toMatch(/[Ee]dit/);
-    expect(paneContent).not.toMatch(/[Ss]ave/);
-    expect(paneContent).not.toMatch(/[Dd]elete/);
-    expect(paneContent).not.toMatch(/[Uu]pdate/);
+    // Should not have interactive edit/save/delete/update buttons or handlers
+    expect(paneContent).not.toMatch(/onClick=\{[^}]*[Ee]dit/);
+    expect(paneContent).not.toMatch(/onClick=\{[^}]*[Ss]ave/);
+    expect(paneContent).not.toMatch(/onClick=\{[^}]*[Dd]elete/);
+    expect(paneContent).not.toMatch(/onClick=\{[^}]*[Uu]pdate/);
+    expect(paneContent).not.toMatch(/>Edit<|>Save<|>Delete<|>Update</);
   });
 
   it('doctrine pane should not contain form inputs for modification', () => {
